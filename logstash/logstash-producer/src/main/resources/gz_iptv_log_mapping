@@ -1,0 +1,486 @@
+PUT gz_iptv_rt_log_current
+{
+	"mappings": {
+		"doc": {
+			"properties": {
+				"PAGE": {
+					"type": "long"
+				},
+				"PROSCREEN_TV_PLAY": {
+					"type": "long"
+				},
+				"PROSCREEN_TVOD_PLAY": {
+					"type": "long"
+				},
+				"PROSCREEN_VOD_PLAY": {
+					"type": "long"
+				},
+				"ON_OFF": {
+					"type": "long"
+				},
+				"FAVORITE": {
+					"type": "long"
+				},
+				"APPOINTMENT": {
+					"type": "long"
+				},
+				"SHARE": {
+					"type": "long"
+				},
+				"RECOMMEND_LOCATION_EXPOSURE": {
+					"type": "long"
+				},
+				"RECOMMEND_LOCATION_CLICK": {
+					"type": "long"
+				},
+				"VOD_PLAY_HEARTBEAT": {
+					"type": "long"
+				},
+				"VOD_PLAY_BEHAVIOR": {
+					"type": "long"
+				},
+				"de_ua": {
+					"type": "keyword"
+				},
+				"media_code": {
+                     "type": "keyword"
+                },
+                "media_name": {
+                            "type": "text",
+                            "fields": {
+                              "keyword": {
+                                "type": "keyword",
+                                "ignore_above": 256
+                              }
+                            }
+                          },
+				"log_time": {
+					"type": "date",
+					"format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+				},
+				"sdk_version": {
+					"type": "keyword"
+				},
+				"user_id": {
+					"type": "keyword"
+				},
+				"nick": {
+					"type": "keyword"
+				},
+				"user_type": {
+					"type": "keyword"
+				},
+				"devicetype": {
+					"type": "keyword"
+				},
+				"device_brand": {
+					"type": "keyword"
+				},
+				"device_model": {
+					"type": "keyword"
+				},
+				"device_density": {
+					"type": "long"
+				},
+				"device_pw": {
+					"type": "long"
+				},
+				"event_type": {
+                    "type": "keyword"
+                },
+				"director": {
+                   "type": "text",
+                   "fields": {
+                      "keyword": {
+                         "type": "keyword",
+                         "ignore_above": 256
+                      }
+                   }
+                },
+				"device_ph": {
+					"type": "long"
+				},
+				"nettype": {
+					"type": "keyword"
+				},
+				"sys_id": {
+					"type": "keyword"
+				},
+				"ostype": {
+					"type": "keyword"
+				},
+				"osversion": {
+					"type": "keyword"
+				},
+				 "part_of_day": {
+                            "type": "long"
+                          },
+				"ip": {
+					"type": "keyword"
+				},
+				"source_channel": {
+					"type": "keyword"
+				},
+				"app_type": {
+					"type": "keyword"
+				},
+				"app_version": {
+					"type": "keyword"
+				},
+				"seqid": {
+					"type": "long"
+				},
+				"page_id": {
+					"type": "keyword"
+				},
+				"page_name": {
+					"type": "keyword"
+				},
+				"page_url": {
+					"type": "keyword"
+				},
+				"refer_page_id": {
+					"type": "keyword"
+				},
+				"refer_page_name": {
+					"type": "keyword"
+				},
+				"refer_page_url": {
+					"type": "keyword"
+				},
+				"p_action": {
+					"type": "keyword"
+				},
+				"p_action_time": {
+					"type": "long"
+				},
+				"state_time": {
+					"type": "long"
+				},
+				"create_time": {
+                    "type": "date",
+                    "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+                },
+                "update_time": {
+                    "type": "date",
+                    "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+                },
+				"channel_code": {
+					"type": "text",
+					"fields": {
+						"keyword": {
+							"type": "keyword",
+							"ignore_above": 256
+						}
+					}
+				},
+				"mediacode": {
+					"type": "text",
+					"fields": {
+						"keyword": {
+							"type": "keyword",
+							"ignore_above": 256
+						}
+					}
+				},
+				"channel_number": {
+					"type": "keyword"
+				},
+				"channel_name": {
+					"type": "keyword"
+				},
+				"schedule_name": {
+					"type": "keyword"
+				},
+				"schedule_id": {
+					"type": "long"
+				},
+				"channel_id": {
+					"type": "long"
+				},
+				"id": {
+                     "type": "text",
+                     "fields": {
+                        "keyword": {
+                           "type": "keyword",
+                           "ignore_above": 256
+                        }
+                     }
+                },
+				"schedule_code": {
+					"type": "text",
+					"fields": {
+						"keyword": {
+							"type": "keyword",
+							"ignore_above": 256
+						}
+					}
+				},
+				"schedule_duration": {
+					"type": "long"
+
+				},
+				"scheduleduration": {
+					"type": "text",
+					"fields": {
+						"keyword": {
+							"type": "keyword",
+							"ignore_above": 256
+						}
+					}
+				},
+				"content_id": {
+					"type": "long"
+				},
+				"content_name": {
+					"type": "keyword"
+				},
+				"ps_status": {
+					"type": "long"
+				},
+				"start_time": {
+					"type": "date",
+					"format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+				},
+				"refer_pos_id": {
+					"type": "long"
+				},
+				"refer_parent_id": {
+					"type": "long"
+				},
+				"refer_pos_name": {
+					"type": "keyword"
+				},
+				"mediaduration": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+				"series_id": {
+					"type": "long"
+				},
+				"series_flag": {
+					"type": "integer"
+				},
+				"seriescode": {
+					"type": "text",
+					"fields": {
+						"keyword": {
+							"type": "keyword",
+							"ignore_above": 256
+						}
+					}
+				},
+				"seriesflag": {
+					"type": "text",
+					"fields": {"keyword": {
+							"type": "keyword",
+							"ignore_above": 256
+						}
+					}
+				},
+				"series_name": {
+					"type": "keyword"
+				},
+				"c_sequence": {
+					"type": "long"
+				},
+				"action": {
+					"type": "long"
+				},
+				"media_type": {
+						"type": "long"
+				},
+				"media_type_id": {
+                            "type": "keyword"
+                          },
+                "media_type_name": {
+                            "type": "keyword"
+                          },
+				"login_action": {
+					"type": "long"
+				},
+				"end_time": {
+					"type": "date",
+					"format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+				},
+				"content_type": {
+					"type": "keyword"
+				},
+				"p_type": {
+					"type": "keyword"
+				},
+				"p_name": {
+					"type": "keyword"
+				},
+				"sequence": {
+					"type": "long"
+				},
+				"actors": {
+					"type": "keyword"
+				},
+				"writers": {
+					"type": "keyword"
+				},
+				"category_name": {
+					"type": "keyword"
+				},
+				"category_code": {
+					"type": "keyword"
+				},
+				"content_kind_id": {
+					"type": "long"
+				},
+				"content_kind_name": {
+					"type": "keyword"
+				},
+				"cp_id": {
+					"type": "long"
+				},
+				"cp_name": {
+					"type": "keyword"
+				},
+				"content_recommends": {
+					"properties": {
+						"area_num": {
+                        	"type": "keyword"
+                        },
+						"categorycode": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+								}
+							}
+						},
+						"content_type": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+								"type": "keyword",
+								"ignore_above": 256
+								}
+							}
+						},
+						"mediacode": {
+							"type": "text",
+							"fields": {
+								"keyword": {
+									"type": "keyword",
+									"ignore_above": 256
+								}
+							}
+						},
+						"strategy_log_id": {
+							"type": "long"
+						}
+					}
+				},
+				"strategy_log_id": {
+					"type": "text",
+					"fields": {
+						"keyword": {
+					      "type": "keyword",
+						  "ignore_above": 256
+						}
+					}
+				},
+				"create_day": {
+                     "type": "text",
+                     "fields": {
+                         "keyword": {
+                            "type": "keyword",
+                            "ignore_above": 256
+                         }
+                     }
+                },
+				"area_num": {
+					"type": "keyword"
+				},
+				"searchkey": {
+					"type": "keyword"
+				},
+				"special_Code": {
+					"type": "text",
+					"fields": {
+						"keyword": {
+							"type": "keyword",
+							"ignore_above": 256
+						}
+					}
+				},
+				"tryview": {
+					"type": "text",
+					"fields": {
+						"keyword": {
+							"type": "keyword",
+							"ignore_above": 256
+						}
+					}
+				},
+				"seqid_beat": {
+					"type": "text",
+					"fields": {
+						"keyword": {
+							"type": "keyword",
+							"ignore_above": 256
+						}
+					}
+				},
+				"duration": {
+					"type": "long"
+				},
+				"start_seek_time": {
+					"type": "long"
+				},
+				"end_seek_time": {
+					"type": "long"
+				},
+				"current_time": {
+					"type": "long"
+				},
+				"user_db_id": {
+                    "type": "long"
+                },
+				"user_union_id": {
+        	            "type": "long"
+                },
+                "scene_id": {
+                    "type": "long"
+                },
+                "scene_name": {
+                    "type": "text",
+                    "fields": {
+                        "keyword": {
+                        "type": "keyword",
+                        "ignore_above": 256
+                        }
+      		        }
+                }
+	      }
+        }
+    }
+}
+
+POST /_aliases?pretty
+{
+  "actions": [
+    {
+      "remove": {
+        "index": "gz_iptv_log_current",
+        "alias": "gz_iptv_log"
+      }
+    },
+    {
+      "add": {
+        "index": "gz_iptv_log_current",
+        "alias": "gz_iptv_log"
+      }
+    }
+  ]
+}

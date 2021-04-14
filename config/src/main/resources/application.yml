@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    config:
+      server:
+        # 本地文件地址
+        native:
+          search-locations: classpath:native
+
+#开启健康检查
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+#关闭安全验证
+management:
+  security:
+    enabled: false

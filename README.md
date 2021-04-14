@@ -1,5 +1,3 @@
-# zhinengtuijian_pukka
-智能推荐项目小程序
 # iptv
 application.name	    port
 iptv-eureka             8001

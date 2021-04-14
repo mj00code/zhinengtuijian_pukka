@@ -1,0 +1,4 @@
+com\ubo\iptv\hystrix\HeaderRequestInterceptor.class
+com\ubo\iptv\hystrix\DelegatingRequestAttributesCallable.class
+com\ubo\iptv\hystrix\HystrixRequestAttributesAutoConfiguration.class
+com\ubo\iptv\hystrix\RequestAttributesConcurrencyStrategy.class

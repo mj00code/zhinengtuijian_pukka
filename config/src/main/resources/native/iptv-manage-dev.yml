@@ -1,0 +1,10 @@
+#datasource
+datasource.name: gz_recommend
+
+#redis
+redis.pool.max-active: 500
+
+#jwt
+jwt:
+  secret-key: u2b3o4c8a6r9e273f6com46ffd57
+  expire-second.account: 86400

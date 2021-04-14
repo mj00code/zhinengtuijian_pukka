@@ -1,0 +1,36 @@
+PUT user_current
+{
+  "mappings": {
+    "doc": {
+      "properties": {
+        "activeTime": {
+          "type": "date",
+          "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+        },
+        "createTime": {
+          "type": "date",
+          "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+        }
+      }
+    }
+  }
+}
+
+
+POST /_aliases?pretty
+{
+  "actions": [
+    {
+      "remove": {
+        "index": "user_current",
+        "alias": "user"
+      }
+    },
+    {
+      "add": {
+        "index": "user_current",
+        "alias": "user"
+      }
+    }
+  ]
+}

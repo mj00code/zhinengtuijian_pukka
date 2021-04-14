@@ -1,0 +1,14 @@
+#datasource
+datasource.name: gz_recommend
+
+#redis
+redis.pool.max-active: 500
+
+
+hdfs:
+  logpath: /iptv/log/event
+  nameservices: mycluster
+  namenodesAddr: 192.168.2.44:8020,192.168.2.63:8020
+  namenodes: namenode63,namenode89
+
+iptv.spark.train.uri: http://192.168.2.42:29010/v1/iptv/recommend/train

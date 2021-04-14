@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.pukkasoft.datasync.dao.TContentPicUrlMapper">
+
+    <resultMap type="TContentPicUrl" id="TContentPicUrlResult">
+        <result property="id" column="id"/>
+        <result property="contentType" column="content_type"/>
+        <result property="contentCode" column="content_code"/>
+        <result property="mediaName" column="media_name"/>
+        <result property="picUrl" column="pic_url"/>
+        <result property="platform" column="platform"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="cornerPicurl" column="corner_picurl"/>
+        <result property="cpid" column="cpid"/>
+        <result property="spid" column="spid"/>
+        <result property="cpName" column="cp_name"/>
+        <result property="spName" column="sp_name"/>
+    </resultMap>
+
+    <sql id="selectTContentPicUrlVo">
+        select
+            id,
+            content_type,
+            content_code,
+            media_name,
+            pic_url,
+            platform,
+            create_time,
+            update_time,
+            corner_picurl,
+            cpid,
+            spid,
+            cp_name,
+            sp_name
+        from t_content_pic_url
+    </sql>
+
+    <select id="selectTContentPicUrlList" parameterType="TContentPicUrl" resultMap="TContentPicUrlResult">
+        <include refid="selectTContentPicUrlVo"/>
+        <where>
+            <if test="contentType != null ">and content_type = #{contentType}</if>
+            <if test="contentCode != null  and contentCode != ''">and content_code = #{contentCode}</if>
+            <if test="mediaName != null  and mediaName != ''">and media_name like concat('%', #{mediaName}, '%')</if>
+            <if test="picUrl != null  and picUrl != ''">and pic_url = #{picUrl}</if>
+            <if test="platform != null ">and platform = #{platform}</if>
+        </where>
+    </select>
+
+    <select id="selectTContentPicUrlById" parameterType="Long" resultMap="TContentPicUrlResult">
+        <include refid="selectTContentPicUrlVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTContentPicUrl" parameterType="TContentPicUrl" useGeneratedKeys="true" keyProperty="id">
+        insert into t_content_pic_url
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="contentType != null ">content_type,</if>
+            <if test="contentCode != null  and contentCode != ''">content_code,</if>
+            <if test="mediaName != null  and mediaName != ''">media_name,</if>
+            <if test="picUrl != null  and picUrl != ''">pic_url,</if>
+            <if test="platform != null ">platform,</if>
+            <if test="createTime != null ">create_time,</if>
+            <if test="updateTime != null ">update_time,</if>
+            <if test="cornerPicurl != null ">corner_picurl,</if>
+            <if test="cpid != null ">cpid,</if>
+            <if test="spid != null ">spid,</if>
+            <if test="cpName != null ">cp_name,</if>
+            <if test="spName != null ">sp_name,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="contentType != null ">#{contentType},</if>
+            <if test="contentCode != null  and contentCode != ''">#{contentCode},</if>
+            <if test="mediaName != null  and mediaName != ''">#{mediaName},</if>
+            <if test="picUrl != null  and picUrl != ''">#{picUrl},</if>
+            <if test="platform != null ">#{platform},</if>
+            <if test="createTime != null ">#{createTime},</if>
+            <if test="updateTime != null ">#{updateTime},</if>
+            <if test="cornerPicurl != null ">#{cornerPicurl},</if>
+            <if test="cpid != null ">#{cpid},</if>
+            <if test="spid != null ">#{spid},</if>
+            <if test="cpName != null ">#{cpName},</if>
+            <if test="spName != null ">#{spName},</if>
+        </trim>
+    </insert>
+
+    <update id="updateTContentPicUrl" parameterType="TContentPicUrl">
+        update t_content_pic_url
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="contentType != null ">content_type = #{contentType},</if>
+            <if test="contentCode != null  and contentCode != ''">content_code = #{contentCode},</if>
+            <if test="mediaName != null  and mediaName != ''">media_name = #{mediaName},</if>
+            <if test="picUrl != null  and picUrl != ''">pic_url = #{picUrl},</if>
+            <if test="platform != null ">platform = #{platform},</if>
+            <if test="createTime != null ">create_time = #{createTime},</if>
+            <if test="updateTime != null ">update_time = #{updateTime},</if>
+            <if test="cornerPicurl != null ">corner_picurl = #{cornerPicurl},</if>
+            <if test="cpid != null ">cpid = #{cpid},</if>
+            <if test="spid != null ">spid = #{spid},</if>
+            <if test="cpName != null ">cp_name = #{cpName},</if>
+            <if test="spName != null ">sp_name = #{spName},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTContentPicUrlById" parameterType="Long">
+        delete from t_content_pic_url
+        where id = #{id}
+    </delete>
+
+    <!--<delete id="deleteTContentPicUrlByIds" parameterType="String">
+        delete from t_content_pic_url where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>-->
+
+</mapper>

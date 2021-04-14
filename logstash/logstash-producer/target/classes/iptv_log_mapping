@@ -1,0 +1,563 @@
+PUT iptv_rt_log_current
+{
+  "mappings": {
+    "doc": {
+      "properties": {
+          "DETAIL_2_PALY_PAGE": {
+            "type": "long"
+          },
+          "FAVORITE": {
+            "type": "long"
+          },
+          "LIST_PAGE_CATA_SWITCH": {
+            "type": "long"
+          },
+          "NON_PLAY_PAGE_HEART": {
+            "type": "long"
+          },
+          "ON_OFF": {
+            "type": "long"
+          },
+          "RECOMMEND_LOCATION_CLICK": {
+            "type": "long"
+          },
+          "RECOMMEND_LOCATION_EXPOSURE": {
+            "type": "long"
+          },
+          "TIMESHIFT_PALY_HEART": {
+            "type": "long"
+          },
+          "TVOD_PLAY_HEART": {
+            "type": "long"
+          },
+          "TV_PLAY_HEART": {
+            "type": "long"
+          },
+          "VOD_PLAY_HEART": {
+            "type": "long"
+          },
+          "action": {
+            "type": "integer"
+          },
+          "action_type": {
+            "type": "keyword"
+          },
+          "active_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "actors": {
+            "type": "keyword"
+          },
+          "apk_version": {
+            "type": "keyword"
+          },
+          "area_code": {
+            "type": "keyword"
+          },
+          "area_num": {
+            "type": "keyword"
+          },
+          "bitrate": {
+            "type": "keyword"
+          },
+          "category_code": {
+            "type": "keyword"
+          },
+          "city_code": {
+            "type": "keyword"
+          },
+          "content_id": {
+            "type": "long"
+          },
+          "content_name": {
+            "type": "keyword"
+          },
+          "content_recommends": {
+            "properties": {
+              "area_num": {
+                "type": "long"
+              },
+              "category_code": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "content_type": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "mediacode": {
+                "type": "text",
+                "fields": {
+                  "keyword": {
+                    "type": "keyword",
+                    "ignore_above": 256
+                  }
+                }
+              },
+              "strategy_log_id": {
+                "type": "long"
+              }
+            }
+          },
+          "content_type": {
+            "type": "keyword"
+          },
+          "content_union_id": {
+            "type": "long"
+          },
+          "continue_order": {
+            "type": "integer"
+          },
+          "create_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+            "update_time": {
+              "type": "date",
+              "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+            },
+          "current_play_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "current_schedule_code": {
+            "type": "keyword"
+          },
+          "currentplaytime": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "definition": {
+            "type": "keyword"
+          },
+          "detail_2_paly_page": {
+            "type": "integer"
+          },
+          "directors": {
+            "type": "keyword"
+          },
+          "epg_group_id": {
+            "type": "keyword"
+          },
+          "epg_model": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "event_type": {
+            "type": "keyword"
+          },
+          "exp_id": {
+            "type": "keyword"
+          },
+          "expired_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "external_link_paly_heart": {
+            "type": "integer"
+          },
+          "favorite_0": {
+            "type": "integer"
+          },
+          "favorite_1": {
+            "type": "integer"
+          },
+          "global_content_code": {
+            "type": "keyword"
+          },
+          "global_content_name": {
+            "type": "keyword"
+          },
+          "id": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "is_recommendation": {
+            "type": "keyword"
+          },
+          "ispid": {
+            "type": "long"
+          },
+          "lanuages": {
+            "type": "keyword"
+          },
+          "list_page_cata_switch": {
+            "type": "integer"
+          },
+          "log_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "media_code": {
+            "type": "keyword"
+          },
+          "media_duration": {
+            "type": "integer"
+          },
+          "media_id": {
+            "type": "long"
+          },
+          "media_kind_id": {
+            "type": "integer"
+          },
+          "media_kind_name": {
+            "type": "keyword"
+          },
+          "media_name": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "media_type": {
+            "type": "integer"
+          },
+          "media_type_id": {
+            "type": "integer"
+          },
+          "media_type_name": {
+            "type": "keyword"
+          },
+          "mediacode": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "mediaduration": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "medianame": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "medis_code": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "nations": {
+            "type": "keyword"
+          },
+          "non_play_page_heart": {
+            "type": "integer"
+          },
+          "order_0": {
+            "type": "integer"
+          },
+          "order_1": {
+            "type": "integer"
+          },
+          "orgair_date": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "page_id": {
+            "type": "keyword"
+          },
+          "page_name": {
+            "type": "keyword"
+          },
+          "page_url": {
+            "type": "keyword"
+          },
+          "path": {
+            "type": "keyword"
+          },
+          "pay_status": {
+            "type": "keyword"
+          },
+          "pay_type": {
+            "type": "keyword"
+          },
+          "product_code": {
+            "type": "keyword"
+          },
+          "product_name": {
+            "type": "keyword"
+          },
+          "product_price": {
+            "type": "double"
+          },
+          "product_type": {
+            "type": "keyword"
+          },
+          "purchase_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "recommend_location_click": {
+            "type": "integer"
+          },
+          "recommend_location_exposure": {
+            "type": "integer"
+          },
+          "refer_media_code": {
+            "type": "keyword"
+          },
+          "refer_mediacode": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "refer_page_id": {
+            "type": "keyword"
+          },
+          "refer_page_name": {
+            "type": "keyword"
+          },
+          "refer_page_url": {
+            "type": "keyword"
+          },
+          "refer_parent_id": {
+            "type": "keyword"
+          },
+          "refer_pos_id": {
+            "type": "keyword"
+          },
+          "refer_pos_name": {
+            "type": "keyword"
+          },
+          "refer_type": {
+            "type": "keyword"
+          },
+          "release_year": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "retrieve_id": {
+            "type": "keyword"
+          },
+          "scene_id": {
+            "type": "long"
+          },
+          "schedule_code": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "sdk_version": {
+            "type": "keyword"
+          },
+          "searchkey": {
+            "type": "keyword"
+          },
+          "seqid": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "series_flag": {
+            "type": "integer"
+          },
+          "seriescode": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "seriesflag": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "serverTime": {
+            "type": "date"
+          },
+          "service": {
+            "type": "keyword"
+          },
+          "specialCode": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "special_code": {
+            "type": "keyword"
+          },
+          "spid": {
+            "type": "long"
+          },
+          "start_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "stb_id": {
+            "type": "keyword"
+          },
+          "stb_ip": {
+            "type": "keyword"
+          },
+          "stb_mac": {
+            "type": "keyword"
+          },
+          "stb_type": {
+            "type": "keyword"
+          },
+          "strategy_log_id": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "sys_id": {
+            "type": "keyword"
+          },
+          "sys_union_id": {
+            "type": "long"
+          },
+          "template_version": {
+            "type": "keyword"
+          },
+          "terminal_type": {
+            "type": "keyword"
+          },
+          "themes": {
+            "type": "keyword"
+          },
+          "timeshift_paly_heart": {
+            "type": "integer"
+          },
+          "try_view": {
+            "type": "integer"
+          },
+          "tryview": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "turn_0": {
+            "type": "integer"
+          },
+          "turn_1": {
+            "type": "integer"
+          },
+          "tv_play_heart": {
+            "type": "integer"
+          },
+          "tvod_play_heart": {
+            "type": "integer"
+          },
+          "user_db_id": {
+            "type": "long"
+          },
+          "user_group_id": {
+            "type": "keyword"
+          },
+          "user_id": {
+            "type": "keyword"
+          },
+          "user_union_id": {
+            "type": "long"
+          },
+          "valid_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "vod_play_heart": {
+            "type": "integer"
+          },
+          "weigh": {
+            "type": "keyword"
+          }
+        }
+    }
+  }
+}
+
+
+
+POST /_aliases?pretty
+{
+  "actions": [
+    {
+      "remove": {
+        "index": "iptv_rt_log_current",
+        "alias": "iptv_rt_log"
+      }
+    },
+    {
+      "add": {
+        "index": "iptv_rt_log_current",
+        "alias": "iptv_rt_log"
+      }
+    }
+  ]
+}
