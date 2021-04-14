@@ -1,0 +1,13 @@
+#datasource
+datasource.name: ottdb_gsgd
+
+#redis
+redis.pool.max-active: 500
+
+
+contentInfo:
+  url: http://111.11.189.150:8081/
+  path: IPTVPortalInterface/content/getcontentlist.do
+  portalCode: PCODE-t2gwbgzp
+  spToken: 4F673775CD9E51276730A9E8EA7EA9D2
+  spId: 1005

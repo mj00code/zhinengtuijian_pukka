@@ -1,0 +1,76 @@
+server:
+  port: 8001
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: iptv-eureka
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  environment: ${spring.profiles.active}
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+  client:
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+
+---
+spring:
+  profiles: local
+eureka:
+  server:
+    # 关闭自我保护
+    enable-self-preservation: false
+    # 每隔10s扫描服务列表，移除失效服务
+    eviction-interval-timer-in-ms: 10000
+
+---
+spring:
+  profiles: dev
+eureka:
+  server:
+    # 关闭自我保护
+    enable-self-preservation: false
+    # 每隔10s扫描服务列表，移除失效服务
+    eviction-interval-timer-in-ms: 10000
+
+---
+spring:
+  profiles: test
+eureka:
+  server:
+    # 关闭自我保护
+    enable-self-preservation: false
+    # 每隔10s扫描服务列表，移除失效服务
+    eviction-interval-timer-in-ms: 10000
+
+---
+spring:
+  profiles: pre
+
+---
+spring:
+  profiles: prod
+
+---
+spring:
+  profiles: prod1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka
+
+---
+spring:
+  profiles: prod2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8001/eureka

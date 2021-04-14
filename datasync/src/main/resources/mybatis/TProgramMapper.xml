@@ -1,0 +1,1039 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.pukkasoft.datasync.dao.TProgramMapper">
+
+    <resultMap type="TProgram" id="TProgramResult">
+        <result property="id" column="ID"/>
+        <result property="name" column="Name"/>
+        <result property="nameen" column="NameEN"/>
+        <result property="code" column="Code"/>
+        <result property="cpcontentid" column="CPContentID"/>
+        <result property="programtype" column="ProgramType"/>
+        <result property="parentid" column="ParentID"/>
+        <result property="actordisplay" column="ActorDisplay"/>
+        <result property="writerdisplayen" column="WriterDisplayEN"/>
+        <result property="writerdisplay" column="WriterDisplay"/>
+        <result property="actordisplayen" column="ActorDisplayEN"/>
+        <result property="description" column="Description"/>
+        <result property="descriptionen" column="DescriptionEN"/>
+        <result property="ordernumber" column="OrderNumber"/>
+        <result property="sortname" column="SortName"/>
+        <result property="searchname" column="SearchName"/>
+        <result property="genre" column="Genre"/>
+        <result property="originalcountry" column="OriginalCountry"/>
+        <result property="originalcountryen" column="OriginalCountryEN"/>
+        <result property="language" column="Language"/>
+        <result property="languageen" column="LanguageEN"/>
+        <result property="releaseyear" column="ReleaseYear"/>
+        <result property="orgairdate" column="OrgAirDate"/>
+        <result property="licensingwindowstart" column="LicensingWindowStart"/>
+        <result property="licensingwindowend" column="LicensingWindowEnd"/>
+        <result property="displayasnew" column="DisplayAsNew"/>
+        <result property="displayaslastchance" column="DisplayAsLastChance"/>
+        <result property="macrovision" column="Macrovision"/>
+        <result property="pricetaxin" column="PriceTaxIn"/>
+        <result property="status" column="Status"/>
+        <result property="episodecount" column="EpisodeCount"/>
+        <result property="episodeindex" column="EpisodeIndex"/>
+        <result property="type" column="Type"/>
+        <result property="typeen" column="TypeEN"/>
+        <result property="keywords" column="Keywords"/>
+        <result property="tags" column="Tags"/>
+        <result property="viewpoint" column="ViewPoint"/>
+        <result property="starlevel" column="StarLevel"/>
+        <result property="thumbimg2" column="Thumbimg2"/>
+        <result property="posterimg2" column="Posterimg2"/>
+        <result property="duration" column="Duration"/>
+        <result property="contentprovider" column="ContentProvider"/>
+        <result property="thumbimg" column="ThumbImg"/>
+        <result property="posterimg" column="PosterImg"/>
+        <result property="stillimg" column="StillImg"/>
+        <result property="score" column="Score"/>
+        <result property="hitcount" column="HitCount"/>
+        <result property="recommendcount" column="RecommendCount"/>
+        <result property="categoryid" column="CategoryID"/>
+        <result property="categoryname" column="CategoryName"/>
+        <result property="checkdesc" column="CheckDesc"/>
+        <result property="producer" column="Producer"/>
+        <result property="createtime" column="CreateTime"/>
+        <result property="updatetime" column="UpdateTime"/>
+        <result property="limitareaid" column="LimitAreaID"/>
+        <result property="limitareaname" column="LimitAreaName"/>
+        <result property="cpid" column="CPID"/>
+        <result property="cpname" column="CPName"/>
+        <result property="spid" column="SPID"/>
+        <result property="spname" column="SPName"/>
+        <result property="contentcountryid" column="ContentCountryID"/>
+        <result property="contentyearid" column="ContentYearID"/>
+        <result property="srcimg" column="SrcImg"/>
+        <result property="imgstatus" column="ImgStatus"/>
+        <result property="imgcheckdesc" column="ImgCheckDesc"/>
+        <result property="contentkindid" column="ContentKindID"/>
+        <result property="srcid" column="SrcID"/>
+        <result property="srcstatus" column="SrcStatus"/>
+        <result property="contentkindname" column="ContentKindName"/>
+        <result property="ppvcategoryid" column="PPVCategoryID"/>
+        <result property="categorynameen" column="CategoryNameEN"/>
+        <result property="contentkindnameen" column="ContentKindNameEN"/>
+        <result property="limitareanameen" column="LimitAreaNameEN"/>
+        <result property="releaseyearen" column="ReleaseYearEN"/>
+        <result property="pc" column="PC"/>
+        <result property="pcAreaid" column="PC_AreaID"/>
+        <result property="pcAreaname" column="PC_AreaName"/>
+        <result property="pcAreanameen" column="PC_AreaNameEN"/>
+        <result property="pcStarttime" column="PC_StartTime"/>
+        <result property="pcEndtime" column="PC_EndTime"/>
+        <result property="stb" column="STB"/>
+        <result property="stbAreaid" column="STB_AreaID"/>
+        <result property="stbAreaname" column="STB_AreaName"/>
+        <result property="stbAreanameen" column="STB_AreaNameEN"/>
+        <result property="stbStarttime" column="STB_StartTime"/>
+        <result property="stbEndtime" column="STB_EndTime"/>
+        <result property="mobile" column="Mobile"/>
+        <result property="mobileAreaid" column="Mobile_AreaID"/>
+        <result property="mobileAreaname" column="Mobile_AreaName"/>
+        <result property="mobileAreanameen" column="Mobile_AreaNameEN"/>
+        <result property="mobileStarttime" column="Mobile_StartTime"/>
+        <result property="mobileEndtime" column="Mobile_EndTime"/>
+        <result property="stillimg2" column="StillImg2"/>
+        <result property="slideimg" column="Slideimg"/>
+        <result property="slideimg2" column="Slideimg2"/>
+        <result property="midimg2" column="Midimg2"/>
+        <result property="midimg" column="Midimg"/>
+        <result property="midimg3" column="Midimg3"/>
+        <result property="aliasname1" column="Aliasname1"/>
+        <result property="aliasname2" column="Aliasname2"/>
+        <result property="aliasname3" column="Aliasname3"/>
+        <result property="studio" column="Studio"/>
+        <result property="subtitle1" column="Subtitle1"/>
+        <result property="subtitle2" column="Subtitle2"/>
+        <result property="subtitle3" column="Subtitle3"/>
+        <result property="subtitlename1" column="Subtitlename1"/>
+        <result property="subtitlename2" column="Subtitlename2"/>
+        <result property="subtitlename3" column="Subtitlename3"/>
+        <result property="poster3x4" column="Poster3x4"/>
+        <result property="poster4x3" column="Poster4x3"/>
+        <result property="poster16x9" column="Poster16x9"/>
+        <result property="thumbimg3" column="thumbimg3"/>
+        <result property="posterimg3" column="posterimg3"/>
+        <result property="extendimg" column="extendimg"/>
+        <result property="reviewstatus" column="ReviewStatus"/>
+        <result property="reviewdesc" column="ReviewDesc"/>
+        <result property="modifydesc" column="ModifyDesc"/>
+        <result property="contentcode" column="ContentCode"/>
+        <result property="checktime" column="CheckTime"/>
+        <result property="checker" column="Checker"/>
+        <result property="originalname" column="Originalname"/>
+        <result property="kpeople" column="Kpeople"/>
+        <result property="scriptwriter" column="Scriptwriter"/>
+        <result property="compere" column="Compere"/>
+        <result property="guest" column="Guest"/>
+        <result property="reporter" column="Reporter"/>
+        <result property="opincharge" column="Opincharge"/>
+        <result property="copyright" column="Copyright"/>
+        <result property="sourcetype" column="SourceType"/>
+        <result property="seriesflag" column="SeriesFlag"/>
+        <result property="vspcode" column="VspCode"/>
+        <result property="oldid" column="OldId"/>
+        <result property="opcheckstatus" column="opcheckstatus"/>
+        <result property="opcheckdesc" column="opcheckdesc"/>
+        <result property="c2status" column="c2status"/>
+        <result property="oldcode" column="OldCode"/>
+        <result property="c2writerdisplay" column="C2writerdisplay"/>
+        <result property="mgmd5" column="mgmd5"/>
+        <result property="definition" column="Definition"/>
+        <result property="commitcheckstatus" column="commitCheckStatus"/>
+        <result property="commitcheckstatustime" column="commitCheckStatusTime"/>
+        <result property="opchecker" column="opchecker"/>
+        <result property="opchecktime" column="opchecktime"/>
+        <result property="editlockstatus" column="editLockStatus"/>
+        <result property="editlocktime" column="editLockTime"/>
+        <result property="editlockchecker" column="editLockChecker"/>
+        <result property="approvalnumber" column="approvalNumber"/>
+        <result property="iptvid" column="iptvId"/>
+        <result property="iptvstatus" column="iptvStatus"/>
+        <result property="iptvpriority" column="iptvPriority"/>
+        <result property="cornername" column="cornername"/>
+        <result property="cornerpicurl" column="cornerpicurl"/>
+        <result property="slicestatus" column="slicestatus"/>
+        <result property="sliceurl" column="sliceurl"/>
+        <result property="onlinestatus" column="onlinestatus"/>
+        <result property="adminid" column="adminid"/>
+        <result property="adminname" column="adminname"/>
+        <result property="adminip" column="adminip"/>
+        <result property="namelabel" column="namelabel"/>
+    </resultMap>
+
+    <sql id="selectTProgramVo">
+        select
+            ID,
+            Name,
+            NameEN,
+            Code,
+            CPContentID,
+            ProgramType,
+            ParentID,
+            ActorDisplay,
+            WriterDisplayEN,
+            WriterDisplay,
+            ActorDisplayEN,
+            Description,
+            DescriptionEN,
+            OrderNumber,
+            SortName,
+            SearchName,
+            Genre,
+            OriginalCountry,
+            OriginalCountryEN,
+            Language,
+            LanguageEN,
+            ReleaseYear,
+            OrgAirDate,
+            LicensingWindowStart,
+            LicensingWindowEnd,
+            DisplayAsNew,
+            DisplayAsLastChance,
+            Macrovision,
+            PriceTaxIn,
+            Status,
+            EpisodeCount,
+            EpisodeIndex,
+            Type,
+            TypeEN,
+            Keywords,
+            Tags,
+            ViewPoint,
+            StarLevel,
+            Thumbimg2,
+            Posterimg2,
+            Duration,
+            ContentProvider,
+            ThumbImg,
+            PosterImg,
+            StillImg,
+            Score,
+            HitCount,
+            RecommendCount,
+            CategoryID,
+            CategoryName,
+            CheckDesc,
+            Producer,
+            CreateTime,
+            UpdateTime,
+            LimitAreaID,
+            LimitAreaName,
+            CPID,
+            CPName,
+            SPID,
+            SPName,
+            ContentCountryID,
+            ContentYearID,
+            SrcImg,
+            ImgStatus,
+            ImgCheckDesc,
+            ContentKindID,
+            SrcID,
+            SrcStatus,
+            ContentKindName,
+            PPVCategoryID,
+            CategoryNameEN,
+            ContentKindNameEN,
+            LimitAreaNameEN,
+            ReleaseYearEN,
+            PC,
+            PC_AreaID,
+            PC_AreaName,
+            PC_AreaNameEN,
+            PC_StartTime,
+            PC_EndTime,
+            STB,
+            STB_AreaID,
+            STB_AreaName,
+            STB_AreaNameEN,
+            STB_StartTime,
+            STB_EndTime,
+            Mobile,
+            Mobile_AreaID,
+            Mobile_AreaName,
+            Mobile_AreaNameEN,
+            Mobile_StartTime,
+            Mobile_EndTime,
+            StillImg2,
+            Slideimg,
+            Slideimg2,
+            Midimg2,
+            Midimg,
+            Midimg3,
+            Aliasname1,
+            Aliasname2,
+            Aliasname3,
+            Studio,
+            Subtitle1,
+            Subtitle2,
+            Subtitle3,
+            Subtitlename1,
+            Subtitlename2,
+            Subtitlename3,
+            Poster3x4,
+            Poster4x3,
+            Poster16x9,
+            thumbimg3,
+            posterimg3,
+            extendimg,
+            ReviewStatus,
+            ReviewDesc,
+            ModifyDesc,
+            ContentCode,
+            CheckTime,
+            Checker,
+            Originalname,
+            Kpeople,
+            Scriptwriter,
+            Compere,
+            Guest,
+            Reporter,
+            Opincharge,
+            Copyright,
+            SourceType,
+            SeriesFlag,
+            VspCode,
+            OldId,
+            opcheckstatus,
+            opcheckdesc,
+            c2status,
+            OldCode,
+            C2writerdisplay,
+            mgmd5,
+            Definition,
+            commitCheckStatus,
+            commitCheckStatusTime,
+            opchecker,
+            opchecktime,
+            editLockStatus,
+            editLockTime,
+            editLockChecker,
+            approvalNumber,
+            iptvId,
+            iptvStatus,
+            iptvPriority,
+            cornername,
+            cornerpicurl,
+            slicestatus,
+            sliceurl,
+            onlinestatus,
+            adminid,
+            adminname,
+            adminip,
+            namelabel
+        from t_program
+    </sql>
+
+    <select id="selectTProgramList" parameterType="TProgram" resultMap="TProgramResult">
+        <include refid="selectTProgramVo"/>
+        <where>
+            <if test="name != null  and name != ''">and Name like concat('%', #{name}, '%')</if>
+            <if test="nameen != null  and nameen != ''">and NameEN = #{nameen}</if>
+            <if test="code != null  and code != ''">and Code = #{code}</if>
+            <if test="cpcontentid != null  and cpcontentid != ''">and CPContentID = #{cpcontentid}</if>
+            <if test="programtype != null ">and ProgramType = #{programtype}</if>
+            <if test="parentid != null ">and ParentID = #{parentid}</if>
+            <if test="actordisplay != null  and actordisplay != ''">and ActorDisplay = #{actordisplay}</if>
+            <if test="writerdisplayen != null  and writerdisplayen != ''">and WriterDisplayEN = #{writerdisplayen}</if>
+            <if test="writerdisplay != null  and writerdisplay != ''">and WriterDisplay = #{writerdisplay}</if>
+            <if test="actordisplayen != null  and actordisplayen != ''">and ActorDisplayEN = #{actordisplayen}</if>
+            <if test="description != null  and description != ''">and Description = #{description}</if>
+            <if test="descriptionen != null  and descriptionen != ''">and DescriptionEN = #{descriptionen}</if>
+            <if test="ordernumber != null  and ordernumber != ''">and OrderNumber = #{ordernumber}</if>
+            <if test="sortname != null  and sortname != ''">and SortName like concat('%', #{sortname}, '%')</if>
+            <if test="searchname != null  and searchname != ''">and SearchName like concat('%', #{searchname}, '%')</if>
+            <if test="genre != null  and genre != ''">and Genre = #{genre}</if>
+            <if test="originalcountry != null  and originalcountry != ''">and OriginalCountry = #{originalcountry}</if>
+            <if test="originalcountryen != null  and originalcountryen != ''">and OriginalCountryEN =
+                #{originalcountryen}
+            </if>
+            <if test="language != null  and language != ''">and Language = #{language}</if>
+            <if test="languageen != null  and languageen != ''">and LanguageEN = #{languageen}</if>
+            <if test="releaseyear != null  and releaseyear != ''">and ReleaseYear = #{releaseyear}</if>
+            <if test="orgairdate != null  and orgairdate != ''">and OrgAirDate = #{orgairdate}</if>
+            <if test="licensingwindowstart != null  and licensingwindowstart != ''">and LicensingWindowStart =
+                #{licensingwindowstart}
+            </if>
+            <if test="licensingwindowend != null  and licensingwindowend != ''">and LicensingWindowEnd =
+                #{licensingwindowend}
+            </if>
+            <if test="displayasnew != null  and displayasnew != ''">and DisplayAsNew = #{displayasnew}</if>
+            <if test="displayaslastchance != null  and displayaslastchance != ''">and DisplayAsLastChance =
+                #{displayaslastchance}
+            </if>
+            <if test="macrovision != null ">and Macrovision = #{macrovision}</if>
+            <if test="pricetaxin != null  and pricetaxin != ''">and PriceTaxIn = #{pricetaxin}</if>
+            <if test="status != null ">and Status = #{status}</if>
+            <if test="episodecount != null ">and EpisodeCount = #{episodecount}</if>
+            <if test="episodeindex != null ">and EpisodeIndex = #{episodeindex}</if>
+            <if test="type != null  and type != ''">and Type = #{type}</if>
+            <if test="typeen != null  and typeen != ''">and TypeEN = #{typeen}</if>
+            <if test="keywords != null  and keywords != ''">and Keywords = #{keywords}</if>
+            <if test="tags != null  and tags != ''">and Tags = #{tags}</if>
+            <if test="viewpoint != null  and viewpoint != ''">and ViewPoint = #{viewpoint}</if>
+            <if test="starlevel != null ">and StarLevel = #{starlevel}</if>
+            <if test="thumbimg2 != null  and thumbimg2 != ''">and Thumbimg2 = #{thumbimg2}</if>
+            <if test="posterimg2 != null  and posterimg2 != ''">and Posterimg2 = #{posterimg2}</if>
+            <if test="duration != null ">and Duration = #{duration}</if>
+            <if test="contentprovider != null  and contentprovider != ''">and ContentProvider = #{contentprovider}</if>
+            <if test="thumbimg != null  and thumbimg != ''">and ThumbImg = #{thumbimg}</if>
+            <if test="posterimg != null  and posterimg != ''">and PosterImg = #{posterimg}</if>
+            <if test="stillimg != null  and stillimg != ''">and StillImg = #{stillimg}</if>
+            <if test="score != null  and score != ''">and Score = #{score}</if>
+            <if test="hitcount != null ">and HitCount = #{hitcount}</if>
+            <if test="recommendcount != null ">and RecommendCount = #{recommendcount}</if>
+            <if test="categoryid != null ">and CategoryID = #{categoryid}</if>
+            <if test="categoryname != null  and categoryname != ''">and CategoryName like concat('%', #{categoryname},
+                '%')
+            </if>
+            <if test="checkdesc != null  and checkdesc != ''">and CheckDesc = #{checkdesc}</if>
+            <if test="producer != null  and producer != ''">and Producer = #{producer}</if>
+            <if test="createtime != null ">and CreateTime = #{createtime}</if>
+            <if test="updatetime != null ">and UpdateTime = #{updatetime}</if>
+            <if test="limitareaid != null  and limitareaid != ''">and LimitAreaID = #{limitareaid}</if>
+            <if test="limitareaname != null  and limitareaname != ''">and LimitAreaName like concat('%',
+                #{limitareaname}, '%')
+            </if>
+            <if test="cpid != null ">and CPID = #{cpid}</if>
+            <if test="cpname != null  and cpname != ''">and CPName like concat('%', #{cpname}, '%')</if>
+            <if test="spid != null  and spid != ''">and SPID = #{spid}</if>
+            <if test="spname != null  and spname != ''">and SPName like concat('%', #{spname}, '%')</if>
+            <if test="contentcountryid != null ">and ContentCountryID = #{contentcountryid}</if>
+            <if test="contentyearid != null ">and ContentYearID = #{contentyearid}</if>
+            <if test="srcimg != null  and srcimg != ''">and SrcImg = #{srcimg}</if>
+            <if test="imgstatus != null ">and ImgStatus = #{imgstatus}</if>
+            <if test="imgcheckdesc != null  and imgcheckdesc != ''">and ImgCheckDesc = #{imgcheckdesc}</if>
+            <if test="contentkindid != null  and contentkindid != ''">and ContentKindID = #{contentkindid}</if>
+            <if test="srcid != null ">and SrcID = #{srcid}</if>
+            <if test="srcstatus != null ">and SrcStatus = #{srcstatus}</if>
+            <if test="contentkindname != null  and contentkindname != ''">and ContentKindName like concat('%',
+                #{contentkindname}, '%')
+            </if>
+            <if test="ppvcategoryid != null ">and PPVCategoryID = #{ppvcategoryid}</if>
+            <if test="categorynameen != null  and categorynameen != ''">and CategoryNameEN = #{categorynameen}</if>
+            <if test="contentkindnameen != null  and contentkindnameen != ''">and ContentKindNameEN =
+                #{contentkindnameen}
+            </if>
+            <if test="limitareanameen != null  and limitareanameen != ''">and LimitAreaNameEN = #{limitareanameen}</if>
+            <if test="releaseyearen != null  and releaseyearen != ''">and ReleaseYearEN = #{releaseyearen}</if>
+            <if test="pc != null ">and PC = #{pc}</if>
+            <if test="pcAreaid != null  and pcAreaid != ''">and PC_AreaID = #{pcAreaid}</if>
+            <if test="pcAreaname != null  and pcAreaname != ''">and PC_AreaName like concat('%', #{pcAreaname}, '%')
+            </if>
+            <if test="pcAreanameen != null  and pcAreanameen != ''">and PC_AreaNameEN = #{pcAreanameen}</if>
+            <if test="pcStarttime != null ">and PC_StartTime = #{pcStarttime}</if>
+            <if test="pcEndtime != null ">and PC_EndTime = #{pcEndtime}</if>
+            <if test="stb != null ">and STB = #{stb}</if>
+            <if test="stbAreaid != null  and stbAreaid != ''">and STB_AreaID = #{stbAreaid}</if>
+            <if test="stbAreaname != null  and stbAreaname != ''">and STB_AreaName like concat('%', #{stbAreaname},
+                '%')
+            </if>
+            <if test="stbAreanameen != null  and stbAreanameen != ''">and STB_AreaNameEN = #{stbAreanameen}</if>
+            <if test="stbStarttime != null ">and STB_StartTime = #{stbStarttime}</if>
+            <if test="stbEndtime != null ">and STB_EndTime = #{stbEndtime}</if>
+            <if test="mobile != null ">and Mobile = #{mobile}</if>
+            <if test="mobileAreaid != null  and mobileAreaid != ''">and Mobile_AreaID = #{mobileAreaid}</if>
+            <if test="mobileAreaname != null  and mobileAreaname != ''">and Mobile_AreaName like concat('%',
+                #{mobileAreaname}, '%')
+            </if>
+            <if test="mobileAreanameen != null  and mobileAreanameen != ''">and Mobile_AreaNameEN =
+                #{mobileAreanameen}
+            </if>
+            <if test="mobileStarttime != null ">and Mobile_StartTime = #{mobileStarttime}</if>
+            <if test="mobileEndtime != null ">and Mobile_EndTime = #{mobileEndtime}</if>
+            <if test="stillimg2 != null  and stillimg2 != ''">and StillImg2 = #{stillimg2}</if>
+            <if test="slideimg != null  and slideimg != ''">and Slideimg = #{slideimg}</if>
+            <if test="slideimg2 != null  and slideimg2 != ''">and Slideimg2 = #{slideimg2}</if>
+            <if test="midimg2 != null  and midimg2 != ''">and Midimg2 = #{midimg2}</if>
+            <if test="midimg != null  and midimg != ''">and Midimg = #{midimg}</if>
+            <if test="midimg3 != null  and midimg3 != ''">and Midimg3 = #{midimg3}</if>
+            <if test="aliasname1 != null  and aliasname1 != ''">and Aliasname1 = #{aliasname1}</if>
+            <if test="aliasname2 != null  and aliasname2 != ''">and Aliasname2 = #{aliasname2}</if>
+            <if test="aliasname3 != null  and aliasname3 != ''">and Aliasname3 = #{aliasname3}</if>
+            <if test="studio != null  and studio != ''">and Studio = #{studio}</if>
+            <if test="subtitle1 != null  and subtitle1 != ''">and Subtitle1 = #{subtitle1}</if>
+            <if test="subtitle2 != null  and subtitle2 != ''">and Subtitle2 = #{subtitle2}</if>
+            <if test="subtitle3 != null  and subtitle3 != ''">and Subtitle3 = #{subtitle3}</if>
+            <if test="subtitlename1 != null  and subtitlename1 != ''">and Subtitlename1 = #{subtitlename1}</if>
+            <if test="subtitlename2 != null  and subtitlename2 != ''">and Subtitlename2 = #{subtitlename2}</if>
+            <if test="subtitlename3 != null  and subtitlename3 != ''">and Subtitlename3 = #{subtitlename3}</if>
+            <if test="poster3x4 != null  and poster3x4 != ''">and Poster3x4 = #{poster3x4}</if>
+            <if test="poster4x3 != null  and poster4x3 != ''">and Poster4x3 = #{poster4x3}</if>
+            <if test="poster16x9 != null  and poster16x9 != ''">and Poster16x9 = #{poster16x9}</if>
+            <if test="thumbimg3 != null  and thumbimg3 != ''">and thumbimg3 = #{thumbimg3}</if>
+            <if test="posterimg3 != null  and posterimg3 != ''">and posterimg3 = #{posterimg3}</if>
+            <if test="extendimg != null  and extendimg != ''">and extendimg = #{extendimg}</if>
+            <if test="reviewstatus != null ">and ReviewStatus = #{reviewstatus}</if>
+            <if test="reviewdesc != null  and reviewdesc != ''">and ReviewDesc = #{reviewdesc}</if>
+            <if test="modifydesc != null  and modifydesc != ''">and ModifyDesc = #{modifydesc}</if>
+            <if test="contentcode != null  and contentcode != ''">and ContentCode = #{contentcode}</if>
+            <if test="checktime != null ">and CheckTime = #{checktime}</if>
+            <if test="checker != null  and checker != ''">and Checker = #{checker}</if>
+            <if test="originalname != null  and originalname != ''">and Originalname like concat('%', #{originalname},
+                '%')
+            </if>
+            <if test="kpeople != null  and kpeople != ''">and Kpeople = #{kpeople}</if>
+            <if test="scriptwriter != null  and scriptwriter != ''">and Scriptwriter = #{scriptwriter}</if>
+            <if test="compere != null  and compere != ''">and Compere = #{compere}</if>
+            <if test="guest != null  and guest != ''">and Guest = #{guest}</if>
+            <if test="reporter != null  and reporter != ''">and Reporter = #{reporter}</if>
+            <if test="opincharge != null  and opincharge != ''">and Opincharge = #{opincharge}</if>
+            <if test="copyright != null  and copyright != ''">and Copyright = #{copyright}</if>
+            <if test="sourcetype != null ">and SourceType = #{sourcetype}</if>
+            <if test="seriesflag != null ">and SeriesFlag = #{seriesflag}</if>
+            <if test="vspcode != null  and vspcode != ''">and VspCode = #{vspcode}</if>
+            <if test="oldid != null  and oldid != ''">and OldId = #{oldid}</if>
+            <if test="opcheckstatus != null ">and opcheckstatus = #{opcheckstatus}</if>
+            <if test="opcheckdesc != null  and opcheckdesc != ''">and opcheckdesc = #{opcheckdesc}</if>
+            <if test="c2status != null ">and c2status = #{c2status}</if>
+            <if test="oldcode != null  and oldcode != ''">and OldCode = #{oldcode}</if>
+            <if test="c2writerdisplay != null  and c2writerdisplay != ''">and C2writerdisplay = #{c2writerdisplay}</if>
+            <if test="mgmd5 != null  and mgmd5 != ''">and mgmd5 = #{mgmd5}</if>
+            <if test="definition != null ">and Definition = #{definition}</if>
+            <if test="commitcheckstatus != null ">and commitCheckStatus = #{commitcheckstatus}</if>
+            <if test="commitcheckstatustime != null ">and commitCheckStatusTime = #{commitcheckstatustime}</if>
+            <if test="opchecker != null  and opchecker != ''">and opchecker = #{opchecker}</if>
+            <if test="opchecktime != null ">and opchecktime = #{opchecktime}</if>
+            <if test="editlockstatus != null ">and editLockStatus = #{editlockstatus}</if>
+            <if test="editlocktime != null ">and editLockTime = #{editlocktime}</if>
+            <if test="editlockchecker != null  and editlockchecker != ''">and editLockChecker = #{editlockchecker}</if>
+            <if test="approvalnumber != null  and approvalnumber != ''">and approvalNumber = #{approvalnumber}</if>
+            <if test="iptvid != null  and iptvid != ''">and iptvId = #{iptvid}</if>
+            <if test="iptvstatus != null ">and iptvStatus = #{iptvstatus}</if>
+            <if test="iptvpriority != null ">and iptvPriority = #{iptvpriority}</if>
+            <if test="cornername != null  and cornername != ''">and cornername like concat('%', #{cornername}, '%')</if>
+            <if test="cornerpicurl != null  and cornerpicurl != ''">and cornerpicurl = #{cornerpicurl}</if>
+            <if test="slicestatus != null ">and slicestatus = #{slicestatus}</if>
+            <if test="sliceurl != null  and sliceurl != ''">and sliceurl = #{sliceurl}</if>
+            <if test="onlinestatus != null ">and onlinestatus = #{onlinestatus}</if>
+            <if test="adminid != null ">and adminid = #{adminid}</if>
+            <if test="adminname != null  and adminname != ''">and adminname like concat('%', #{adminname}, '%')</if>
+            <if test="adminip != null  and adminip != ''">and adminip = #{adminip}</if>
+            <if test="namelabel != null  and namelabel != ''">and namelabel = #{namelabel}</if>
+        </where>
+    </select>
+
+    <select id="selectTProgramById" parameterType="Long" resultMap="TProgramResult">
+        <include refid="selectTProgramVo"/>
+        where ID = #{id}
+    </select>
+
+    <insert id="insertTProgram" parameterType="TProgram" useGeneratedKeys="true" keyProperty="id">
+        insert into t_program
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null  and name != ''">Name,</if>
+            <if test="nameen != null  and nameen != ''">NameEN,</if>
+            <if test="code != null  and code != ''">Code,</if>
+            <if test="cpcontentid != null  and cpcontentid != ''">CPContentID,</if>
+            <if test="programtype != null ">ProgramType,</if>
+            <if test="parentid != null ">ParentID,</if>
+            <if test="actordisplay != null  and actordisplay != ''">ActorDisplay,</if>
+            <if test="writerdisplayen != null  and writerdisplayen != ''">WriterDisplayEN,</if>
+            <if test="writerdisplay != null  and writerdisplay != ''">WriterDisplay,</if>
+            <if test="actordisplayen != null  and actordisplayen != ''">ActorDisplayEN,</if>
+            <if test="description != null  and description != ''">Description,</if>
+            <if test="descriptionen != null  and descriptionen != ''">DescriptionEN,</if>
+            <if test="ordernumber != null  and ordernumber != ''">OrderNumber,</if>
+            <if test="sortname != null  and sortname != ''">SortName,</if>
+            <if test="searchname != null  and searchname != ''">SearchName,</if>
+            <if test="genre != null  and genre != ''">Genre,</if>
+            <if test="originalcountry != null  and originalcountry != ''">OriginalCountry,</if>
+            <if test="originalcountryen != null  and originalcountryen != ''">OriginalCountryEN,</if>
+            <if test="language != null  and language != ''">Language,</if>
+            <if test="languageen != null  and languageen != ''">LanguageEN,</if>
+            <if test="releaseyear != null  and releaseyear != ''">ReleaseYear,</if>
+            <if test="orgairdate != null  and orgairdate != ''">OrgAirDate,</if>
+            <if test="licensingwindowstart != null  and licensingwindowstart != ''">LicensingWindowStart,</if>
+            <if test="licensingwindowend != null  and licensingwindowend != ''">LicensingWindowEnd,</if>
+            <if test="displayasnew != null  and displayasnew != ''">DisplayAsNew,</if>
+            <if test="displayaslastchance != null  and displayaslastchance != ''">DisplayAsLastChance,</if>
+            <if test="macrovision != null ">Macrovision,</if>
+            <if test="pricetaxin != null  and pricetaxin != ''">PriceTaxIn,</if>
+            <if test="status != null ">Status,</if>
+            <if test="episodecount != null ">EpisodeCount,</if>
+            <if test="episodeindex != null ">EpisodeIndex,</if>
+            <if test="type != null  and type != ''">Type,</if>
+            <if test="typeen != null  and typeen != ''">TypeEN,</if>
+            <if test="keywords != null  and keywords != ''">Keywords,</if>
+            <if test="tags != null  and tags != ''">Tags,</if>
+            <if test="viewpoint != null  and viewpoint != ''">ViewPoint,</if>
+            <if test="starlevel != null ">StarLevel,</if>
+            <if test="thumbimg2 != null  and thumbimg2 != ''">Thumbimg2,</if>
+            <if test="posterimg2 != null  and posterimg2 != ''">Posterimg2,</if>
+            <if test="duration != null ">Duration,</if>
+            <if test="contentprovider != null  and contentprovider != ''">ContentProvider,</if>
+            <if test="thumbimg != null  and thumbimg != ''">ThumbImg,</if>
+            <if test="posterimg != null  and posterimg != ''">PosterImg,</if>
+            <if test="stillimg != null  and stillimg != ''">StillImg,</if>
+            <if test="score != null  and score != ''">Score,</if>
+            <if test="hitcount != null ">HitCount,</if>
+            <if test="recommendcount != null ">RecommendCount,</if>
+            <if test="categoryid != null ">CategoryID,</if>
+            <if test="categoryname != null  and categoryname != ''">CategoryName,</if>
+            <if test="checkdesc != null  and checkdesc != ''">CheckDesc,</if>
+            <if test="producer != null  and producer != ''">Producer,</if>
+            <if test="createtime != null ">CreateTime,</if>
+            <if test="updatetime != null ">UpdateTime,</if>
+            <if test="limitareaid != null  and limitareaid != ''">LimitAreaID,</if>
+            <if test="limitareaname != null  and limitareaname != ''">LimitAreaName,</if>
+            <if test="cpid != null ">CPID,</if>
+            <if test="cpname != null  and cpname != ''">CPName,</if>
+            <if test="spid != null  and spid != ''">SPID,</if>
+            <if test="spname != null  and spname != ''">SPName,</if>
+            <if test="contentcountryid != null ">ContentCountryID,</if>
+            <if test="contentyearid != null ">ContentYearID,</if>
+            <if test="srcimg != null  and srcimg != ''">SrcImg,</if>
+            <if test="imgstatus != null ">ImgStatus,</if>
+            <if test="imgcheckdesc != null  and imgcheckdesc != ''">ImgCheckDesc,</if>
+            <if test="contentkindid != null  and contentkindid != ''">ContentKindID,</if>
+            <if test="srcid != null ">SrcID,</if>
+            <if test="srcstatus != null ">SrcStatus,</if>
+            <if test="contentkindname != null  and contentkindname != ''">ContentKindName,</if>
+            <if test="ppvcategoryid != null ">PPVCategoryID,</if>
+            <if test="categorynameen != null  and categorynameen != ''">CategoryNameEN,</if>
+            <if test="contentkindnameen != null  and contentkindnameen != ''">ContentKindNameEN,</if>
+            <if test="limitareanameen != null  and limitareanameen != ''">LimitAreaNameEN,</if>
+            <if test="releaseyearen != null  and releaseyearen != ''">ReleaseYearEN,</if>
+            <if test="pc != null ">PC,</if>
+            <if test="pcAreaid != null  and pcAreaid != ''">PC_AreaID,</if>
+            <if test="pcAreaname != null  and pcAreaname != ''">PC_AreaName,</if>
+            <if test="pcAreanameen != null  and pcAreanameen != ''">PC_AreaNameEN,</if>
+            <if test="pcStarttime != null ">PC_StartTime,</if>
+            <if test="pcEndtime != null ">PC_EndTime,</if>
+            <if test="stb != null ">STB,</if>
+            <if test="stbAreaid != null  and stbAreaid != ''">STB_AreaID,</if>
+            <if test="stbAreaname != null  and stbAreaname != ''">STB_AreaName,</if>
+            <if test="stbAreanameen != null  and stbAreanameen != ''">STB_AreaNameEN,</if>
+            <if test="stbStarttime != null ">STB_StartTime,</if>
+            <if test="stbEndtime != null ">STB_EndTime,</if>
+            <if test="mobile != null ">Mobile,</if>
+            <if test="mobileAreaid != null  and mobileAreaid != ''">Mobile_AreaID,</if>
+            <if test="mobileAreaname != null  and mobileAreaname != ''">Mobile_AreaName,</if>
+            <if test="mobileAreanameen != null  and mobileAreanameen != ''">Mobile_AreaNameEN,</if>
+            <if test="mobileStarttime != null ">Mobile_StartTime,</if>
+            <if test="mobileEndtime != null ">Mobile_EndTime,</if>
+            <if test="stillimg2 != null  and stillimg2 != ''">StillImg2,</if>
+            <if test="slideimg != null  and slideimg != ''">Slideimg,</if>
+            <if test="slideimg2 != null  and slideimg2 != ''">Slideimg2,</if>
+            <if test="midimg2 != null  and midimg2 != ''">Midimg2,</if>
+            <if test="midimg != null  and midimg != ''">Midimg,</if>
+            <if test="midimg3 != null  and midimg3 != ''">Midimg3,</if>
+            <if test="aliasname1 != null  and aliasname1 != ''">Aliasname1,</if>
+            <if test="aliasname2 != null  and aliasname2 != ''">Aliasname2,</if>
+            <if test="aliasname3 != null  and aliasname3 != ''">Aliasname3,</if>
+            <if test="studio != null  and studio != ''">Studio,</if>
+            <if test="subtitle1 != null  and subtitle1 != ''">Subtitle1,</if>
+            <if test="subtitle2 != null  and subtitle2 != ''">Subtitle2,</if>
+            <if test="subtitle3 != null  and subtitle3 != ''">Subtitle3,</if>
+            <if test="subtitlename1 != null  and subtitlename1 != ''">Subtitlename1,</if>
+            <if test="subtitlename2 != null  and subtitlename2 != ''">Subtitlename2,</if>
+            <if test="subtitlename3 != null  and subtitlename3 != ''">Subtitlename3,</if>
+            <if test="poster3x4 != null  and poster3x4 != ''">Poster3x4,</if>
+            <if test="poster4x3 != null  and poster4x3 != ''">Poster4x3,</if>
+            <if test="poster16x9 != null  and poster16x9 != ''">Poster16x9,</if>
+            <if test="thumbimg3 != null  and thumbimg3 != ''">thumbimg3,</if>
+            <if test="posterimg3 != null  and posterimg3 != ''">posterimg3,</if>
+            <if test="extendimg != null  and extendimg != ''">extendimg,</if>
+            <if test="reviewstatus != null ">ReviewStatus,</if>
+            <if test="reviewdesc != null  and reviewdesc != ''">ReviewDesc,</if>
+            <if test="modifydesc != null  and modifydesc != ''">ModifyDesc,</if>
+            <if test="contentcode != null  and contentcode != ''">ContentCode,</if>
+            <if test="checktime != null ">CheckTime,</if>
+            <if test="checker != null  and checker != ''">Checker,</if>
+            <if test="originalname != null  and originalname != ''">Originalname,</if>
+            <if test="kpeople != null  and kpeople != ''">Kpeople,</if>
+            <if test="scriptwriter != null  and scriptwriter != ''">Scriptwriter,</if>
+            <if test="compere != null  and compere != ''">Compere,</if>
+            <if test="guest != null  and guest != ''">Guest,</if>
+            <if test="reporter != null  and reporter != ''">Reporter,</if>
+            <if test="opincharge != null  and opincharge != ''">Opincharge,</if>
+            <if test="copyright != null  and copyright != ''">Copyright,</if>
+            <if test="sourcetype != null ">SourceType,</if>
+            <if test="seriesflag != null ">SeriesFlag,</if>
+            <if test="vspcode != null  and vspcode != ''">VspCode,</if>
+            <if test="oldid != null  and oldid != ''">OldId,</if>
+            <if test="opcheckstatus != null ">opcheckstatus,</if>
+            <if test="opcheckdesc != null  and opcheckdesc != ''">opcheckdesc,</if>
+            <if test="c2status != null ">c2status,</if>
+            <if test="oldcode != null  and oldcode != ''">OldCode,</if>
+            <if test="c2writerdisplay != null  and c2writerdisplay != ''">C2writerdisplay,</if>
+            <if test="mgmd5 != null  and mgmd5 != ''">mgmd5,</if>
+            <if test="definition != null ">Definition,</if>
+            <if test="commitcheckstatus != null ">commitCheckStatus,</if>
+            <if test="commitcheckstatustime != null ">commitCheckStatusTime,</if>
+            <if test="opchecker != null  and opchecker != ''">opchecker,</if>
+            <if test="opchecktime != null ">opchecktime,</if>
+            <if test="editlockstatus != null ">editLockStatus,</if>
+            <if test="editlocktime != null ">editLockTime,</if>
+            <if test="editlockchecker != null  and editlockchecker != ''">editLockChecker,</if>
+            <if test="approvalnumber != null  and approvalnumber != ''">approvalNumber,</if>
+            <if test="iptvid != null  and iptvid != ''">iptvId,</if>
+            <if test="iptvstatus != null ">iptvStatus,</if>
+            <if test="iptvpriority != null ">iptvPriority,</if>
+            <if test="cornername != null  and cornername != ''">cornername,</if>
+            <if test="cornerpicurl != null  and cornerpicurl != ''">cornerpicurl,</if>
+            <if test="slicestatus != null ">slicestatus,</if>
+            <if test="sliceurl != null  and sliceurl != ''">sliceurl,</if>
+            <if test="onlinestatus != null ">onlinestatus,</if>
+            <if test="adminid != null ">adminid,</if>
+            <if test="adminname != null  and adminname != ''">adminname,</if>
+            <if test="adminip != null  and adminip != ''">adminip,</if>
+            <if test="namelabel != null  and namelabel != ''">namelabel,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null  and name != ''">#{name},</if>
+            <if test="nameen != null  and nameen != ''">#{nameen},</if>
+            <if test="code != null  and code != ''">#{code},</if>
+            <if test="cpcontentid != null  and cpcontentid != ''">#{cpcontentid},</if>
+            <if test="programtype != null ">#{programtype},</if>
+            <if test="parentid != null ">#{parentid},</if>
+            <if test="actordisplay != null  and actordisplay != ''">#{actordisplay},</if>
+            <if test="writerdisplayen != null  and writerdisplayen != ''">#{writerdisplayen},</if>
+            <if test="writerdisplay != null  and writerdisplay != ''">#{writerdisplay},</if>
+            <if test="actordisplayen != null  and actordisplayen != ''">#{actordisplayen},</if>
+            <if test="description != null  and description != ''">#{description},</if>
+            <if test="descriptionen != null  and descriptionen != ''">#{descriptionen},</if>
+            <if test="ordernumber != null  and ordernumber != ''">#{ordernumber},</if>
+            <if test="sortname != null  and sortname != ''">#{sortname},</if>
+            <if test="searchname != null  and searchname != ''">#{searchname},</if>
+            <if test="genre != null  and genre != ''">#{genre},</if>
+            <if test="originalcountry != null  and originalcountry != ''">#{originalcountry},</if>
+            <if test="originalcountryen != null  and originalcountryen != ''">#{originalcountryen},</if>
+            <if test="language != null  and language != ''">#{language},</if>
+            <if test="languageen != null  and languageen != ''">#{languageen},</if>
+            <if test="releaseyear != null  and releaseyear != ''">#{releaseyear},</if>
+            <if test="orgairdate != null  and orgairdate != ''">#{orgairdate},</if>
+            <if test="licensingwindowstart != null  and licensingwindowstart != ''">#{licensingwindowstart},</if>
+            <if test="licensingwindowend != null  and licensingwindowend != ''">#{licensingwindowend},</if>
+            <if test="displayasnew != null  and displayasnew != ''">#{displayasnew},</if>
+            <if test="displayaslastchance != null  and displayaslastchance != ''">#{displayaslastchance},</if>
+            <if test="macrovision != null ">#{macrovision},</if>
+            <if test="pricetaxin != null  and pricetaxin != ''">#{pricetaxin},</if>
+            <if test="status != null ">#{status},</if>
+            <if test="episodecount != null ">#{episodecount},</if>
+            <if test="episodeindex != null ">#{episodeindex},</if>
+            <if test="type != null  and type != ''">#{type},</if>
+            <if test="typeen != null  and typeen != ''">#{typeen},</if>
+            <if test="keywords != null  and keywords != ''">#{keywords},</if>
+            <if test="tags != null  and tags != ''">#{tags},</if>
+            <if test="viewpoint != null  and viewpoint != ''">#{viewpoint},</if>
+            <if test="starlevel != null ">#{starlevel},</if>
+            <if test="thumbimg2 != null  and thumbimg2 != ''">#{thumbimg2},</if>
+            <if test="posterimg2 != null  and posterimg2 != ''">#{posterimg2},</if>
+            <if test="duration != null ">#{duration},</if>
+            <if test="contentprovider != null  and contentprovider != ''">#{contentprovider},</if>
+            <if test="thumbimg != null  and thumbimg != ''">#{thumbimg},</if>
+            <if test="posterimg != null  and posterimg != ''">#{posterimg},</if>
+            <if test="stillimg != null  and stillimg != ''">#{stillimg},</if>
+            <if test="score != null  and score != ''">#{score},</if>
+            <if test="hitcount != null ">#{hitcount},</if>
+            <if test="recommendcount != null ">#{recommendcount},</if>
+            <if test="categoryid != null ">#{categoryid},</if>
+            <if test="categoryname != null  and categoryname != ''">#{categoryname},</if>
+            <if test="checkdesc != null  and checkdesc != ''">#{checkdesc},</if>
+            <if test="producer != null  and producer != ''">#{producer},</if>
+            <if test="createtime != null ">#{createtime},</if>
+            <if test="updatetime != null ">#{updatetime},</if>
+            <if test="limitareaid != null  and limitareaid != ''">#{limitareaid},</if>
+            <if test="limitareaname != null  and limitareaname != ''">#{limitareaname},</if>
+            <if test="cpid != null ">#{cpid},</if>
+            <if test="cpname != null  and cpname != ''">#{cpname},</if>
+            <if test="spid != null  and spid != ''">#{spid},</if>
+            <if test="spname != null  and spname != ''">#{spname},</if>
+            <if test="contentcountryid != null ">#{contentcountryid},</if>
+            <if test="contentyearid != null ">#{contentyearid},</if>
+            <if test="srcimg != null  and srcimg != ''">#{srcimg},</if>
+            <if test="imgstatus != null ">#{imgstatus},</if>
+            <if test="imgcheckdesc != null  and imgcheckdesc != ''">#{imgcheckdesc},</if>
+            <if test="contentkindid != null  and contentkindid != ''">#{contentkindid},</if>
+            <if test="srcid != null ">#{srcid},</if>
+            <if test="srcstatus != null ">#{srcstatus},</if>
+            <if test="contentkindname != null  and contentkindname != ''">#{contentkindname},</if>
+            <if test="ppvcategoryid != null ">#{ppvcategoryid},</if>
+            <if test="categorynameen != null  and categorynameen != ''">#{categorynameen},</if>
+            <if test="contentkindnameen != null  and contentkindnameen != ''">#{contentkindnameen},</if>
+            <if test="limitareanameen != null  and limitareanameen != ''">#{limitareanameen},</if>
+            <if test="releaseyearen != null  and releaseyearen != ''">#{releaseyearen},</if>
+            <if test="pc != null ">#{pc},</if>
+            <if test="pcAreaid != null  and pcAreaid != ''">#{pcAreaid},</if>
+            <if test="pcAreaname != null  and pcAreaname != ''">#{pcAreaname},</if>
+            <if test="pcAreanameen != null  and pcAreanameen != ''">#{pcAreanameen},</if>
+            <if test="pcStarttime != null ">#{pcStarttime},</if>
+            <if test="pcEndtime != null ">#{pcEndtime},</if>
+            <if test="stb != null ">#{stb},</if>
+            <if test="stbAreaid != null  and stbAreaid != ''">#{stbAreaid},</if>
+            <if test="stbAreaname != null  and stbAreaname != ''">#{stbAreaname},</if>
+            <if test="stbAreanameen != null  and stbAreanameen != ''">#{stbAreanameen},</if>
+            <if test="stbStarttime != null ">#{stbStarttime},</if>
+            <if test="stbEndtime != null ">#{stbEndtime},</if>
+            <if test="mobile != null ">#{mobile},</if>
+            <if test="mobileAreaid != null  and mobileAreaid != ''">#{mobileAreaid},</if>
+            <if test="mobileAreaname != null  and mobileAreaname != ''">#{mobileAreaname},</if>
+            <if test="mobileAreanameen != null  and mobileAreanameen != ''">#{mobileAreanameen},</if>
+            <if test="mobileStarttime != null ">#{mobileStarttime},</if>
+            <if test="mobileEndtime != null ">#{mobileEndtime},</if>
+            <if test="stillimg2 != null  and stillimg2 != ''">#{stillimg2},</if>
+            <if test="slideimg != null  and slideimg != ''">#{slideimg},</if>
+            <if test="slideimg2 != null  and slideimg2 != ''">#{slideimg2},</if>
+            <if test="midimg2 != null  and midimg2 != ''">#{midimg2},</if>
+            <if test="midimg != null  and midimg != ''">#{midimg},</if>
+            <if test="midimg3 != null  and midimg3 != ''">#{midimg3},</if>
+            <if test="aliasname1 != null  and aliasname1 != ''">#{aliasname1},</if>
+            <if test="aliasname2 != null  and aliasname2 != ''">#{aliasname2},</if>
+            <if test="aliasname3 != null  and aliasname3 != ''">#{aliasname3},</if>
+            <if test="studio != null  and studio != ''">#{studio},</if>
+            <if test="subtitle1 != null  and subtitle1 != ''">#{subtitle1},</if>
+            <if test="subtitle2 != null  and subtitle2 != ''">#{subtitle2},</if>
+            <if test="subtitle3 != null  and subtitle3 != ''">#{subtitle3},</if>
+            <if test="subtitlename1 != null  and subtitlename1 != ''">#{subtitlename1},</if>
+            <if test="subtitlename2 != null  and subtitlename2 != ''">#{subtitlename2},</if>
+            <if test="subtitlename3 != null  and subtitlename3 != ''">#{subtitlename3},</if>
+            <if test="poster3x4 != null  and poster3x4 != ''">#{poster3x4},</if>
+            <if test="poster4x3 != null  and poster4x3 != ''">#{poster4x3},</if>
+            <if test="poster16x9 != null  and poster16x9 != ''">#{poster16x9},</if>
+            <if test="thumbimg3 != null  and thumbimg3 != ''">#{thumbimg3},</if>
+            <if test="posterimg3 != null  and posterimg3 != ''">#{posterimg3},</if>
+            <if test="extendimg != null  and extendimg != ''">#{extendimg},</if>
+            <if test="reviewstatus != null ">#{reviewstatus},</if>
+            <if test="reviewdesc != null  and reviewdesc != ''">#{reviewdesc},</if>
+            <if test="modifydesc != null  and modifydesc != ''">#{modifydesc},</if>
+            <if test="contentcode != null  and contentcode != ''">#{contentcode},</if>
+            <if test="checktime != null ">#{checktime},</if>
+            <if test="checker != null  and checker != ''">#{checker},</if>
+            <if test="originalname != null  and originalname != ''">#{originalname},</if>
+            <if test="kpeople != null  and kpeople != ''">#{kpeople},</if>
+            <if test="scriptwriter != null  and scriptwriter != ''">#{scriptwriter},</if>
+            <if test="compere != null  and compere != ''">#{compere},</if>
+            <if test="guest != null  and guest != ''">#{guest},</if>
+            <if test="reporter != null  and reporter != ''">#{reporter},</if>
+            <if test="opincharge != null  and opincharge != ''">#{opincharge},</if>
+            <if test="copyright != null  and copyright != ''">#{copyright},</if>
+            <if test="sourcetype != null ">#{sourcetype},</if>
+            <if test="seriesflag != null ">#{seriesflag},</if>
+            <if test="vspcode != null  and vspcode != ''">#{vspcode},</if>
+            <if test="oldid != null  and oldid != ''">#{oldid},</if>
+            <if test="opcheckstatus != null ">#{opcheckstatus},</if>
+            <if test="opcheckdesc != null  and opcheckdesc != ''">#{opcheckdesc},</if>
+            <if test="c2status != null ">#{c2status},</if>
+            <if test="oldcode != null  and oldcode != ''">#{oldcode},</if>
+            <if test="c2writerdisplay != null  and c2writerdisplay != ''">#{c2writerdisplay},</if>
+            <if test="mgmd5 != null  and mgmd5 != ''">#{mgmd5},</if>
+            <if test="definition != null ">#{definition},</if>
+            <if test="commitcheckstatus != null ">#{commitcheckstatus},</if>
+            <if test="commitcheckstatustime != null ">#{commitcheckstatustime},</if>
+            <if test="opchecker != null  and opchecker != ''">#{opchecker},</if>
+            <if test="opchecktime != null ">#{opchecktime},</if>
+            <if test="editlockstatus != null ">#{editlockstatus},</if>
+            <if test="editlocktime != null ">#{editlocktime},</if>
+            <if test="editlockchecker != null  and editlockchecker != ''">#{editlockchecker},</if>
+            <if test="approvalnumber != null  and approvalnumber != ''">#{approvalnumber},</if>
+            <if test="iptvid != null  and iptvid != ''">#{iptvid},</if>
+            <if test="iptvstatus != null ">#{iptvstatus},</if>
+            <if test="iptvpriority != null ">#{iptvpriority},</if>
+            <if test="cornername != null  and cornername != ''">#{cornername},</if>
+            <if test="cornerpicurl != null  and cornerpicurl != ''">#{cornerpicurl},</if>
+            <if test="slicestatus != null ">#{slicestatus},</if>
+            <if test="sliceurl != null  and sliceurl != ''">#{sliceurl},</if>
+            <if test="onlinestatus != null ">#{onlinestatus},</if>
+            <if test="adminid != null ">#{adminid},</if>
+            <if test="adminname != null  and adminname != ''">#{adminname},</if>
+            <if test="adminip != null  and adminip != ''">#{adminip},</if>
+            <if test="namelabel != null  and namelabel != ''">#{namelabel},</if>
+        </trim>
+    </insert>
+
+    <update id="updateTProgram" parameterType="TProgram">
+        update t_program
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null  and name != ''">Name = #{name},</if>
+            <if test="nameen != null  and nameen != ''">NameEN = #{nameen},</if>
+            <if test="code != null  and code != ''">Code = #{code},</if>
+            <if test="cpcontentid != null  and cpcontentid != ''">CPContentID = #{cpcontentid},</if>
+            <if test="programtype != null ">ProgramType = #{programtype},</if>
+            <if test="parentid != null ">ParentID = #{parentid},</if>
+            <if test="actordisplay != null  and actordisplay != ''">ActorDisplay = #{actordisplay},</if>
+            <if test="writerdisplayen != null  and writerdisplayen != ''">WriterDisplayEN = #{writerdisplayen},</if>
+            <if test="writerdisplay != null  and writerdisplay != ''">WriterDisplay = #{writerdisplay},</if>
+            <if test="actordisplayen != null  and actordisplayen != ''">ActorDisplayEN = #{actordisplayen},</if>
+            <if test="description != null  and description != ''">Description = #{description},</if>
+            <if test="descriptionen != null  and descriptionen != ''">DescriptionEN = #{descriptionen},</if>
+            <if test="ordernumber != null  and ordernumber != ''">OrderNumber = #{ordernumber},</if>
+            <if test="sortname != null  and sortname != ''">SortName = #{sortname},</if>
+            <if test="searchname != null  and searchname != ''">SearchName = #{searchname},</if>
+            <if test="genre != null  and genre != ''">Genre = #{genre},</if>
+            <if test="originalcountry != null  and originalcountry != ''">OriginalCountry = #{originalcountry},</if>
+            <if test="originalcountryen != null  and originalcountryen != ''">OriginalCountryEN =
+                #{originalcountryen},
+            </if>
+            <if test="language != null  and language != ''">Language = #{language},</if>
+            <if test="languageen != null  and languageen != ''">LanguageEN = #{languageen},</if>
+            <if test="releaseyear != null  and releaseyear != ''">ReleaseYear = #{releaseyear},</if>
+            <if test="orgairdate != null  and orgairdate != ''">OrgAirDate = #{orgairdate},</if>
+            <if test="licensingwindowstart != null  and licensingwindowstart != ''">LicensingWindowStart =
+                #{licensingwindowstart},
+            </if>
+            <if test="licensingwindowend != null  and licensingwindowend != ''">LicensingWindowEnd =
+                #{licensingwindowend},
+            </if>
+            <if test="displayasnew != null  and displayasnew != ''">DisplayAsNew = #{displayasnew},</if>
+            <if test="displayaslastchance != null  and displayaslastchance != ''">DisplayAsLastChance =
+                #{displayaslastchance},
+            </if>
+            <if test="macrovision != null ">Macrovision = #{macrovision},</if>
+            <if test="pricetaxin != null  and pricetaxin != ''">PriceTaxIn = #{pricetaxin},</if>
+            <if test="status != null ">Status = #{status},</if>
+            <if test="episodecount != null ">EpisodeCount = #{episodecount},</if>
+            <if test="episodeindex != null ">EpisodeIndex = #{episodeindex},</if>
+            <if test="type != null  and type != ''">Type = #{type},</if>
+            <if test="typeen != null  and typeen != ''">TypeEN = #{typeen},</if>
+            <if test="keywords != null  and keywords != ''">Keywords = #{keywords},</if>
+            <if test="tags != null  and tags != ''">Tags = #{tags},</if>
+            <if test="viewpoint != null  and viewpoint != ''">ViewPoint = #{viewpoint},</if>
+            <if test="starlevel != null ">StarLevel = #{starlevel},</if>
+            <if test="thumbimg2 != null  and thumbimg2 != ''">Thumbimg2 = #{thumbimg2},</if>
+            <if test="posterimg2 != null  and posterimg2 != ''">Posterimg2 = #{posterimg2},</if>
+            <if test="duration != null ">Duration = #{duration},</if>
+            <if test="contentprovider != null  and contentprovider != ''">ContentProvider = #{contentprovider},</if>
+            <if test="thumbimg != null  and thumbimg != ''">ThumbImg = #{thumbimg},</if>
+            <if test="posterimg != null  and posterimg != ''">PosterImg = #{posterimg},</if>
+            <if test="stillimg != null  and stillimg != ''">StillImg = #{stillimg},</if>
+            <if test="score != null  and score != ''">Score = #{score},</if>
+            <if test="hitcount != null ">HitCount = #{hitcount},</if>
+            <if test="recommendcount != null ">RecommendCount = #{recommendcount},</if>
+            <if test="categoryid != null ">CategoryID = #{categoryid},</if>
+            <if test="categoryname != null  and categoryname != ''">CategoryName = #{categoryname},</if>
+            <if test="checkdesc != null  and checkdesc != ''">CheckDesc = #{checkdesc},</if>
+            <if test="producer != null  and producer != ''">Producer = #{producer},</if>
+            <if test="createtime != null ">CreateTime = #{createtime},</if>
+            <if test="updatetime != null ">UpdateTime = #{updatetime},</if>
+            <if test="limitareaid != null  and limitareaid != ''">LimitAreaID = #{limitareaid},</if>
+            <if test="limitareaname != null  and limitareaname != ''">LimitAreaName = #{limitareaname},</if>
+            <if test="cpid != null ">CPID = #{cpid},</if>
+            <if test="cpname != null  and cpname != ''">CPName = #{cpname},</if>
+            <if test="spid != null  and spid != ''">SPID = #{spid},</if>
+            <if test="spname != null  and spname != ''">SPName = #{spname},</if>
+            <if test="contentcountryid != null ">ContentCountryID = #{contentcountryid},</if>
+            <if test="contentyearid != null ">ContentYearID = #{contentyearid},</if>
+            <if test="srcimg != null  and srcimg != ''">SrcImg = #{srcimg},</if>
+            <if test="imgstatus != null ">ImgStatus = #{imgstatus},</if>
+            <if test="imgcheckdesc != null  and imgcheckdesc != ''">ImgCheckDesc = #{imgcheckdesc},</if>
+            <if test="contentkindid != null  and contentkindid != ''">ContentKindID = #{contentkindid},</if>
+            <if test="srcid != null ">SrcID = #{srcid},</if>
+            <if test="srcstatus != null ">SrcStatus = #{srcstatus},</if>
+            <if test="contentkindname != null  and contentkindname != ''">ContentKindName = #{contentkindname},</if>
+            <if test="ppvcategoryid != null ">PPVCategoryID = #{ppvcategoryid},</if>
+            <if test="categorynameen != null  and categorynameen != ''">CategoryNameEN = #{categorynameen},</if>
+            <if test="contentkindnameen != null  and contentkindnameen != ''">ContentKindNameEN =
+                #{contentkindnameen},
+            </if>
+            <if test="limitareanameen != null  and limitareanameen != ''">LimitAreaNameEN = #{limitareanameen},</if>
+            <if test="releaseyearen != null  and releaseyearen != ''">ReleaseYearEN = #{releaseyearen},</if>
+            <if test="pc != null ">PC = #{pc},</if>
+            <if test="pcAreaid != null  and pcAreaid != ''">PC_AreaID = #{pcAreaid},</if>
+            <if test="pcAreaname != null  and pcAreaname != ''">PC_AreaName = #{pcAreaname},</if>
+            <if test="pcAreanameen != null  and pcAreanameen != ''">PC_AreaNameEN = #{pcAreanameen},</if>
+            <if test="pcStarttime != null ">PC_StartTime = #{pcStarttime},</if>
+            <if test="pcEndtime != null ">PC_EndTime = #{pcEndtime},</if>
+            <if test="stb != null ">STB = #{stb},</if>
+            <if test="stbAreaid != null  and stbAreaid != ''">STB_AreaID = #{stbAreaid},</if>
+            <if test="stbAreaname != null  and stbAreaname != ''">STB_AreaName = #{stbAreaname},</if>
+            <if test="stbAreanameen != null  and stbAreanameen != ''">STB_AreaNameEN = #{stbAreanameen},</if>
+            <if test="stbStarttime != null ">STB_StartTime = #{stbStarttime},</if>
+            <if test="stbEndtime != null ">STB_EndTime = #{stbEndtime},</if>
+            <if test="mobile != null ">Mobile = #{mobile},</if>
+            <if test="mobileAreaid != null  and mobileAreaid != ''">Mobile_AreaID = #{mobileAreaid},</if>
+            <if test="mobileAreaname != null  and mobileAreaname != ''">Mobile_AreaName = #{mobileAreaname},</if>
+            <if test="mobileAreanameen != null  and mobileAreanameen != ''">Mobile_AreaNameEN = #{mobileAreanameen},
+            </if>
+            <if test="mobileStarttime != null ">Mobile_StartTime = #{mobileStarttime},</if>
+            <if test="mobileEndtime != null ">Mobile_EndTime = #{mobileEndtime},</if>
+            <if test="stillimg2 != null  and stillimg2 != ''">StillImg2 = #{stillimg2},</if>
+            <if test="slideimg != null  and slideimg != ''">Slideimg = #{slideimg},</if>
+            <if test="slideimg2 != null  and slideimg2 != ''">Slideimg2 = #{slideimg2},</if>
+            <if test="midimg2 != null  and midimg2 != ''">Midimg2 = #{midimg2},</if>
+            <if test="midimg != null  and midimg != ''">Midimg = #{midimg},</if>
+            <if test="midimg3 != null  and midimg3 != ''">Midimg3 = #{midimg3},</if>
+            <if test="aliasname1 != null  and aliasname1 != ''">Aliasname1 = #{aliasname1},</if>
+            <if test="aliasname2 != null  and aliasname2 != ''">Aliasname2 = #{aliasname2},</if>
+            <if test="aliasname3 != null  and aliasname3 != ''">Aliasname3 = #{aliasname3},</if>
+            <if test="studio != null  and studio != ''">Studio = #{studio},</if>
+            <if test="subtitle1 != null  and subtitle1 != ''">Subtitle1 = #{subtitle1},</if>
+            <if test="subtitle2 != null  and subtitle2 != ''">Subtitle2 = #{subtitle2},</if>
+            <if test="subtitle3 != null  and subtitle3 != ''">Subtitle3 = #{subtitle3},</if>
+            <if test="subtitlename1 != null  and subtitlename1 != ''">Subtitlename1 = #{subtitlename1},</if>
+            <if test="subtitlename2 != null  and subtitlename2 != ''">Subtitlename2 = #{subtitlename2},</if>
+            <if test="subtitlename3 != null  and subtitlename3 != ''">Subtitlename3 = #{subtitlename3},</if>
+            <if test="poster3x4 != null  and poster3x4 != ''">Poster3x4 = #{poster3x4},</if>
+            <if test="poster4x3 != null  and poster4x3 != ''">Poster4x3 = #{poster4x3},</if>
+            <if test="poster16x9 != null  and poster16x9 != ''">Poster16x9 = #{poster16x9},</if>
+            <if test="thumbimg3 != null  and thumbimg3 != ''">thumbimg3 = #{thumbimg3},</if>
+            <if test="posterimg3 != null  and posterimg3 != ''">posterimg3 = #{posterimg3},</if>
+            <if test="extendimg != null  and extendimg != ''">extendimg = #{extendimg},</if>
+            <if test="reviewstatus != null ">ReviewStatus = #{reviewstatus},</if>
+            <if test="reviewdesc != null  and reviewdesc != ''">ReviewDesc = #{reviewdesc},</if>
+            <if test="modifydesc != null  and modifydesc != ''">ModifyDesc = #{modifydesc},</if>
+            <if test="contentcode != null  and contentcode != ''">ContentCode = #{contentcode},</if>
+            <if test="checktime != null ">CheckTime = #{checktime},</if>
+            <if test="checker != null  and checker != ''">Checker = #{checker},</if>
+            <if test="originalname != null  and originalname != ''">Originalname = #{originalname},</if>
+            <if test="kpeople != null  and kpeople != ''">Kpeople = #{kpeople},</if>
+            <if test="scriptwriter != null  and scriptwriter != ''">Scriptwriter = #{scriptwriter},</if>
+            <if test="compere != null  and compere != ''">Compere = #{compere},</if>
+            <if test="guest != null  and guest != ''">Guest = #{guest},</if>
+            <if test="reporter != null  and reporter != ''">Reporter = #{reporter},</if>
+            <if test="opincharge != null  and opincharge != ''">Opincharge = #{opincharge},</if>
+            <if test="copyright != null  and copyright != ''">Copyright = #{copyright},</if>
+            <if test="sourcetype != null ">SourceType = #{sourcetype},</if>
+            <if test="seriesflag != null ">SeriesFlag = #{seriesflag},</if>
+            <if test="vspcode != null  and vspcode != ''">VspCode = #{vspcode},</if>
+            <if test="oldid != null  and oldid != ''">OldId = #{oldid},</if>
+            <if test="opcheckstatus != null ">opcheckstatus = #{opcheckstatus},</if>
+            <if test="opcheckdesc != null  and opcheckdesc != ''">opcheckdesc = #{opcheckdesc},</if>
+            <if test="c2status != null ">c2status = #{c2status},</if>
+            <if test="oldcode != null  and oldcode != ''">OldCode = #{oldcode},</if>
+            <if test="c2writerdisplay != null  and c2writerdisplay != ''">C2writerdisplay = #{c2writerdisplay},</if>
+            <if test="mgmd5 != null  and mgmd5 != ''">mgmd5 = #{mgmd5},</if>
+            <if test="definition != null ">Definition = #{definition},</if>
+            <if test="commitcheckstatus != null ">commitCheckStatus = #{commitcheckstatus},</if>
+            <if test="commitcheckstatustime != null ">commitCheckStatusTime = #{commitcheckstatustime},</if>
+            <if test="opchecker != null  and opchecker != ''">opchecker = #{opchecker},</if>
+            <if test="opchecktime != null ">opchecktime = #{opchecktime},</if>
+            <if test="editlockstatus != null ">editLockStatus = #{editlockstatus},</if>
+            <if test="editlocktime != null ">editLockTime = #{editlocktime},</if>
+            <if test="editlockchecker != null  and editlockchecker != ''">editLockChecker = #{editlockchecker},</if>
+            <if test="approvalnumber != null  and approvalnumber != ''">approvalNumber = #{approvalnumber},</if>
+            <if test="iptvid != null  and iptvid != ''">iptvId = #{iptvid},</if>
+            <if test="iptvstatus != null ">iptvStatus = #{iptvstatus},</if>
+            <if test="iptvpriority != null ">iptvPriority = #{iptvpriority},</if>
+            <if test="cornername != null  and cornername != ''">cornername = #{cornername},</if>
+            <if test="cornerpicurl != null  and cornerpicurl != ''">cornerpicurl = #{cornerpicurl},</if>
+            <if test="slicestatus != null ">slicestatus = #{slicestatus},</if>
+            <if test="sliceurl != null  and sliceurl != ''">sliceurl = #{sliceurl},</if>
+            <if test="onlinestatus != null ">onlinestatus = #{onlinestatus},</if>
+            <if test="adminid != null ">adminid = #{adminid},</if>
+            <if test="adminname != null  and adminname != ''">adminname = #{adminname},</if>
+            <if test="adminip != null  and adminip != ''">adminip = #{adminip},</if>
+            <if test="namelabel != null  and namelabel != ''">namelabel = #{namelabel},</if>
+        </trim>
+        where ID = #{id}
+    </update>
+
+    <delete id="deleteTProgramById" parameterType="Long">
+        delete from t_program
+        where ID = #{id}
+    </delete>
+
+    <delete id="deleteTProgramByIds" parameterType="String">
+        delete from t_program where ID in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
