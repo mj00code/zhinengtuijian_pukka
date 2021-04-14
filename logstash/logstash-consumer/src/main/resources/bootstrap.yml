@@ -1,0 +1,70 @@
+## 需要修改维护的配置项集中到文件头，方便管理，以配置环境开头（dev, test,uat,prd等等）再到项细化
+##当前项目的applicationName
+current.application.name: iptv-logstash-consumer
+##当前项目暴露端口
+current.application.port: 8011
+##eureka地址
+dev.eureka.zone: http://192.168.2.44:8001/eureka
+test.eureka.zone: http://192.168.2.44:8001/eureka
+pre.eureka.zone: http://localhost:8001/eureka
+prod.eureka.zone: http://localhost:8001/eureka
+##config server的id
+configserver.id: iptv-config
+
+
+
+################配置模板,一般情况不需要修改################
+server:
+  port: ${current.application.port}
+  tomcat.uri-encoding: UTF-8
+
+spring:
+  profiles:
+    active: local
+  application:
+    name: ${current.application.name}
+  cloud:
+    config:
+      discovery:
+        serviceId: ${configserver.id}
+        enabled: true
+      name: common,${spring.application.name}
+      profile: ${spring.profiles.active}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
+    appname: ${spring.application.name}
+
+
+hdfs:
+  nameservices: ${hdfs.nameservices}
+  namenodesAddr: ${hdfs.namenodesAddr}
+  namenodes: ${hdfs.namenodes}
+
+
+---
+spring:
+  profiles: local
+eureka.client.serviceUrl.defaultZone: ${dev.eureka.zone}
+
+---
+spring:
+  profiles: dev
+eureka.client.serviceUrl.defaultZone: ${dev.eureka.zone}
+
+---
+spring:
+  profiles: test
+eureka.client.serviceUrl.defaultZone: ${test.eureka.zone}
+
+---
+spring:
+  profiles: pre
+eureka.client.serviceUrl.defaultZone: ${pre.eureka.zone}
+
+---
+spring:
+  profiles: prod
+eureka.client.serviceUrl.defaultZone: ${prod.eureka.zone}

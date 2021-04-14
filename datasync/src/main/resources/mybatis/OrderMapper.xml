@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="cn.pukkasoft.datasync.dao.OrderDao">
+
+	<resultMap id="OrderResultMap" type="cn.pukkasoft.datasync.model.Order">
+		<result property="id" column="ID"/>
+		<result property="tmtype" column="TMType"/>
+		<result property="orderNumber" column="OrderNumber"/>
+		<result property="orderTime" column="OrderTime"/>
+		<result property="unOrderTime" column="UnOrderTime"/>
+		<result property="payType" column="PayType"/>
+		<result property="status" column="Status"/>
+		<result property="userId" column="UserID"/>
+		<result property="payStatus" column="PayStatus"/>
+		<result property="payDesc" column="PayDesc"/>
+		<result property="requestIp" column="RequestIP"/>
+		<result property="ispaymentHod" column="ISPaymentHod"/>
+		<result property="productId" column="ProductID"/>
+		<result property="productCode" column="ProductCode"/>
+		<result property="productName" column="ProductName"/>
+		<result property="serviceId" column="ServiceID"/>
+		<result property="serviceCode" column="ServiceCode"/>
+		<result property="serviceName" column="ServiceName"/>
+		<result property="contentId" column="ContentID"/>
+		<result property="contentCode" column="ContentCode"/>
+		<result property="contentName" column="ContentName"/>
+		<result property="price" column="Price"/>
+		<result property="discount" column="Discount"/>
+		<result property="fee" column="Fee"/>
+		<result property="validStart" column="ValidStart"/>
+		<result property="validEnd" column="ValidEnd"/>
+		<result property="createTime" column="CreateTime"/>
+		<result property="updateTime" column="UpdateTime"/>
+		<result property="chargingId" column="ChargingID"/>
+		<result property="spid" column="SPID"/>
+		<result property="serviceType" column="ServiceType"/>
+		<result property="isLog" column="IsLog"/>
+		<result property="userName" column="UserName"/>
+		<result property="spname" column="SPName"/>
+		<result property="spresellerId" column="SPResellerID"/>
+		<result property="spresellerName" column="SPResellerName"/>
+		<result property="isPlan" column="IsPlan"/>
+		<result property="chargingDuration" column="ChargingDuration"/>
+		<result property="isForceActivation" column="IsForceActivation"/>
+		<result property="month" column="Month"/>
+		<result property="serviceCancelTime" column="ServiceCancelTime"/>
+		<result property="freeMonth" column="FreeMonth"/>
+		<result property="remark" column="Remark"/>
+		<result property="reportTime" column="ReportTime"/>
+		<result property="contentProvider" column="ContentProvider"/>
+		<result property="orderId" column="OrderId"/>
+		<result property="billingCode" column="BillingCode"/>
+		<result property="chargingType" column="ChargingType"/>
+		<result property="payCode" column="PayCode"/>
+		<result property="cityNum" column="cityNum"/>
+		<result property="cityNumName" column="cityNumName"/>
+		<result property="platform" column="platform"/>
+	</resultMap>
+	
+	<!-- 表名 -->
+	<sql id="tableName">
+        t_gsyd_order
+    </sql>
+    
+    <sql id="columns">
+        `ID`,`TMType`,`OrderNumber`,`OrderTime`,`UnOrderTime`,`PayType`,`Status`,`UserID`,`PayStatus`,`PayDesc`,`RequestIP`,`ISPaymentHod`,`ProductID`,`ProductCode`,`ProductName`,`ServiceID`,`ServiceCode`,`ServiceName`,`ContentID`,`ContentCode`,`ContentName`,`Price`,`Discount`,`Fee`,`ValidStart`,`ValidEnd`,`CreateTime`,`UpdateTime`,`ChargingID`,`SPID`,`ServiceType`,`IsLog`,`UserName`,`SPName`,`SPResellerID`,`SPResellerName`,`IsPlan`,`ChargingDuration`,`IsForceActivation`,`Month`,`ServiceCancelTime`,`FreeMonth`,`Remark`,`ReportTime`,`ContentProvider`,`OrderId`,`BillingCode`,`ChargingType`,`PayCode`,`cityNum`,`cityNumName`,`platform`
+    </sql>
+    
+    <sql id="where">
+        <where>
+	        <if test="null != id">
+            AND `ID` = #{id}
+            </if>
+	        <if test="null != tmtype and '' != tmtype">
+            AND `TMType` = #{tmtype}
+            </if>
+	        <if test="null != orderNumber and '' != orderNumber">
+            AND `OrderNumber` = #{orderNumber}
+            </if>
+	        <if test="null != orderTime and '' != orderTime">
+            AND `OrderTime` = #{orderTime}
+            </if>
+	        <if test="null != unOrderTime and '' != unOrderTime">
+            AND `UnOrderTime` = #{unOrderTime}
+            </if>
+	        <if test="null != payType">
+            AND `PayType` = #{payType}
+            </if>
+	        <if test="null != status">
+            AND `Status` = #{status}
+            </if>
+	        <if test="null != userId and '' != userId">
+            AND `UserID` = #{userId}
+            </if>
+	        <if test="null != payStatus">
+            AND `PayStatus` = #{payStatus}
+            </if>
+	        <if test="null != payDesc and '' != payDesc">
+            AND `PayDesc` = #{payDesc}
+            </if>
+	        <if test="null != requestIp and '' != requestIp">
+            AND `RequestIP` = #{requestIp}
+            </if>
+	        <if test="null != ispaymentHod">
+            AND `ISPaymentHod` = #{ispaymentHod}
+            </if>
+	        <if test="null != productId">
+            AND `ProductID` = #{productId}
+            </if>
+	        <if test="null != productCode and '' != productCode">
+            AND `ProductCode` = #{productCode}
+            </if>
+	        <if test="null != productName and '' != productName">
+            AND `ProductName` = #{productName}
+            </if>
+	        <if test="null != serviceId">
+            AND `ServiceID` = #{serviceId}
+            </if>
+	        <if test="null != serviceCode and '' != serviceCode">
+            AND `ServiceCode` = #{serviceCode}
+            </if>
+	        <if test="null != serviceName and '' != serviceName">
+            AND `ServiceName` = #{serviceName}
+            </if>
+	        <if test="null != contentId">
+            AND `ContentID` = #{contentId}
+            </if>
+	        <if test="null != contentCode and '' != contentCode">
+            AND `ContentCode` = #{contentCode}
+            </if>
+	        <if test="null != contentName and '' != contentName">
+            AND `ContentName` = #{contentName}
+            </if>
+	        <if test="null != price and '' != price">
+            AND `Price` = #{price}
+            </if>
+	        <if test="null != discount and '' != discount">
+            AND `Discount` = #{discount}
+            </if>
+	        <if test="null != fee and '' != fee">
+            AND `Fee` = #{fee}
+            </if>
+	        <if test="null != validStart and '' != validStart">
+            AND `ValidStart` = #{validStart}
+            </if>
+	        <if test="null != validEnd and '' != validEnd">
+            AND `ValidEnd` = #{validEnd}
+            </if>
+	        <if test="null != createTime and '' != createTime">
+            AND `CreateTime` = #{createTime}
+            </if>
+	        <if test="null != updateTime and '' != updateTime">
+            AND `UpdateTime` = #{updateTime}
+            </if>
+	        <if test="null != chargingId">
+            AND `ChargingID` = #{chargingId}
+            </if>
+	        <if test="null != spid">
+            AND `SPID` = #{spid}
+            </if>
+	        <if test="null != serviceType">
+            AND `ServiceType` = #{serviceType}
+            </if>
+	        <if test="null != isLog">
+            AND `IsLog` = #{isLog}
+            </if>
+	        <if test="null != userName and '' != userName">
+            AND `UserName` = #{userName}
+            </if>
+	        <if test="null != spname and '' != spname">
+            AND `SPName` = #{spname}
+            </if>
+	        <if test="null != spresellerId">
+            AND `SPResellerID` = #{spresellerId}
+            </if>
+	        <if test="null != spresellerName and '' != spresellerName">
+            AND `SPResellerName` = #{spresellerName}
+            </if>
+	        <if test="null != isPlan">
+            AND `IsPlan` = #{isPlan}
+            </if>
+	        <if test="null != chargingDuration">
+            AND `ChargingDuration` = #{chargingDuration}
+            </if>
+	        <if test="null != isForceActivation">
+            AND `IsForceActivation` = #{isForceActivation}
+            </if>
+	        <if test="null != month and '' != month">
+            AND `Month` = #{month}
+            </if>
+	        <if test="null != serviceCancelTime and '' != serviceCancelTime">
+            AND `ServiceCancelTime` = #{serviceCancelTime}
+            </if>
+	        <if test="null != freeMonth">
+            AND `FreeMonth` = #{freeMonth}
+            </if>
+	        <if test="null != remark and '' != remark">
+            AND `Remark` = #{remark}
+            </if>
+	        <if test="null != reportTime and '' != reportTime">
+            AND `ReportTime` = #{reportTime}
+            </if>
+	        <if test="null != contentProvider">
+            AND `ContentProvider` = #{contentProvider}
+            </if>
+	        <if test="null != orderId and '' != orderId">
+            AND `OrderId` = #{orderId}
+            </if>
+	        <if test="null != billingCode and '' != billingCode">
+            AND `BillingCode` = #{billingCode}
+            </if>
+	        <if test="null != chargingType">
+            AND `ChargingType` = #{chargingType}
+            </if>
+	        <if test="null != payCode and '' != payCode">
+            AND `PayCode` = #{payCode}
+            </if>
+	        <if test="null != cityNum and '' != cityNum">
+            AND `cityNum` = #{cityNum}
+            </if>
+	        <if test="null != cityNumName and '' != cityNumName">
+            AND `cityNumName` = #{cityNumName}
+            </if>
+	        <if test="null != platform">
+            AND `platform` = #{platform}
+            </if>
+        </where>
+    </sql>
+	
+	<!-- 添加方法 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO <include refid="tableName"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="id != null">
+                    `ID`,
+                </if>
+                <if test="tmtype != null and '' != tmtype">
+                    `TMType`,
+                </if>
+                <if test="orderNumber != null and '' != orderNumber">
+                    `OrderNumber`,
+                </if>
+                <if test="orderTime != null and '' != orderTime">
+                    `OrderTime`,
+                </if>
+                <if test="unOrderTime != null and '' != unOrderTime">
+                    `UnOrderTime`,
+                </if>
+                <if test="payType != null">
+                    `PayType`,
+                </if>
+                <if test="status != null">
+                    `Status`,
+                </if>
+                <if test="userId != null and '' != userId">
+                    `UserID`,
+                </if>
+                <if test="payStatus != null">
+                    `PayStatus`,
+                </if>
+                <if test="payDesc != null and '' != payDesc">
+                    `PayDesc`,
+                </if>
+                <if test="requestIp != null and '' != requestIp">
+                    `RequestIP`,
+                </if>
+                <if test="ispaymentHod != null">
+                    `ISPaymentHod`,
+                </if>
+                <if test="productId != null">
+                    `ProductID`,
+                </if>
+                <if test="productCode != null and '' != productCode">
+                    `ProductCode`,
+                </if>
+                <if test="productName != null and '' != productName">
+                    `ProductName`,
+                </if>
+                <if test="serviceId != null">
+                    `ServiceID`,
+                </if>
+                <if test="serviceCode != null and '' != serviceCode">
+                    `ServiceCode`,
+                </if>
+                <if test="serviceName != null and '' != serviceName">
+                    `ServiceName`,
+                </if>
+                <if test="contentId != null">
+                    `ContentID`,
+                </if>
+                <if test="contentCode != null and '' != contentCode">
+                    `ContentCode`,
+                </if>
+                <if test="contentName != null and '' != contentName">
+                    `ContentName`,
+                </if>
+                <if test="price != null and '' != price">
+                    `Price`,
+                </if>
+                <if test="discount != null and '' != discount">
+                    `Discount`,
+                </if>
+                <if test="fee != null and '' != fee">
+                    `Fee`,
+                </if>
+                <if test="validStart != null and '' != validStart">
+                    `ValidStart`,
+                </if>
+                <if test="validEnd != null and '' != validEnd">
+                    `ValidEnd`,
+                </if>
+                <if test="createTime != null and '' != createTime">
+                    `CreateTime`,
+                </if>
+                <if test="updateTime != null and '' != updateTime">
+                    `UpdateTime`,
+                </if>
+                <if test="chargingId != null">
+                    `ChargingID`,
+                </if>
+                <if test="spid != null">
+                    `SPID`,
+                </if>
+                <if test="serviceType != null">
+                    `ServiceType`,
+                </if>
+                <if test="isLog != null">
+                    `IsLog`,
+                </if>
+                <if test="userName != null and '' != userName">
+                    `UserName`,
+                </if>
+                <if test="spname != null and '' != spname">
+                    `SPName`,
+                </if>
+                <if test="spresellerId != null">
+                    `SPResellerID`,
+                </if>
+                <if test="spresellerName != null and '' != spresellerName">
+                    `SPResellerName`,
+                </if>
+                <if test="isPlan != null">
+                    `IsPlan`,
+                </if>
+                <if test="chargingDuration != null">
+                    `ChargingDuration`,
+                </if>
+                <if test="isForceActivation != null">
+                    `IsForceActivation`,
+                </if>
+                <if test="month != null and '' != month">
+                    `Month`,
+                </if>
+                <if test="serviceCancelTime != null and '' != serviceCancelTime">
+                    `ServiceCancelTime`,
+                </if>
+                <if test="freeMonth != null">
+                    `FreeMonth`,
+                </if>
+                <if test="remark != null and '' != remark">
+                    `Remark`,
+                </if>
+                <if test="reportTime != null and '' != reportTime">
+                    `ReportTime`,
+                </if>
+                <if test="contentProvider != null">
+                    `ContentProvider`,
+                </if>
+                <if test="orderId != null and '' != orderId">
+                    `OrderId`,
+                </if>
+                <if test="billingCode != null and '' != billingCode">
+                    `BillingCode`,
+                </if>
+                <if test="chargingType != null">
+                    `ChargingType`,
+                </if>
+                <if test="payCode != null and '' != payCode">
+                    `PayCode`,
+                </if>
+                <if test="cityNum != null and '' != cityNum">
+                    `cityNum`,
+                </if>
+                <if test="cityNumName != null and '' != cityNumName">
+                    `cityNumName`,
+                </if>
+                <if test="platform != null">
+                    `platform`
+                </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="tmtype != null and '' != tmtype">
+                #{tmtype},
+            </if>
+            <if test="orderNumber != null and '' != orderNumber">
+                #{orderNumber},
+            </if>
+            <if test="orderTime != null and '' != orderTime">
+                #{orderTime},
+            </if>
+            <if test="unOrderTime != null and '' != unOrderTime">
+                #{unOrderTime},
+            </if>
+            <if test="payType != null">
+                #{payType},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="userId != null and '' != userId">
+                #{userId},
+            </if>
+            <if test="payStatus != null">
+                #{payStatus},
+            </if>
+            <if test="payDesc != null and '' != payDesc">
+                #{payDesc},
+            </if>
+            <if test="requestIp != null and '' != requestIp">
+                #{requestIp},
+            </if>
+            <if test="ispaymentHod != null">
+                #{ispaymentHod},
+            </if>
+            <if test="productId != null">
+                #{productId},
+            </if>
+            <if test="productCode != null and '' != productCode">
+                #{productCode},
+            </if>
+            <if test="productName != null and '' != productName">
+                #{productName},
+            </if>
+            <if test="serviceId != null">
+                #{serviceId},
+            </if>
+            <if test="serviceCode != null and '' != serviceCode">
+                #{serviceCode},
+            </if>
+            <if test="serviceName != null and '' != serviceName">
+                #{serviceName},
+            </if>
+            <if test="contentId != null">
+                #{contentId},
+            </if>
+            <if test="contentCode != null and '' != contentCode">
+                #{contentCode},
+            </if>
+            <if test="contentName != null and '' != contentName">
+                #{contentName},
+            </if>
+            <if test="price != null and '' != price">
+                #{price},
+            </if>
+            <if test="discount != null and '' != discount">
+                #{discount},
+            </if>
+            <if test="fee != null and '' != fee">
+                #{fee},
+            </if>
+            <if test="validStart != null and '' != validStart">
+                #{validStart},
+            </if>
+            <if test="validEnd != null and '' != validEnd">
+                #{validEnd},
+            </if>
+            <if test="createTime != null and '' != createTime">
+                #{createTime},
+            </if>
+            <if test="updateTime != null and '' != updateTime">
+                #{updateTime},
+            </if>
+            <if test="chargingId != null">
+                #{chargingId},
+            </if>
+            <if test="spid != null">
+                #{spid},
+            </if>
+            <if test="serviceType != null">
+                #{serviceType},
+            </if>
+            <if test="isLog != null">
+                #{isLog},
+            </if>
+            <if test="userName != null and '' != userName">
+                #{userName},
+            </if>
+            <if test="spname != null and '' != spname">
+                #{spname},
+            </if>
+            <if test="spresellerId != null">
+                #{spresellerId},
+            </if>
+            <if test="spresellerName != null and '' != spresellerName">
+                #{spresellerName},
+            </if>
+            <if test="isPlan != null">
+                #{isPlan},
+            </if>
+            <if test="chargingDuration != null">
+                #{chargingDuration},
+            </if>
+            <if test="isForceActivation != null">
+                #{isForceActivation},
+            </if>
+            <if test="month != null and '' != month">
+                #{month},
+            </if>
+            <if test="serviceCancelTime != null and '' != serviceCancelTime">
+                #{serviceCancelTime},
+            </if>
+            <if test="freeMonth != null">
+                #{freeMonth},
+            </if>
+            <if test="remark != null and '' != remark">
+                #{remark},
+            </if>
+            <if test="reportTime != null and '' != reportTime">
+                #{reportTime},
+            </if>
+            <if test="contentProvider != null">
+                #{contentProvider},
+            </if>
+            <if test="orderId != null and '' != orderId">
+                #{orderId},
+            </if>
+            <if test="billingCode != null and '' != billingCode">
+                #{billingCode},
+            </if>
+            <if test="chargingType != null">
+                #{chargingType},
+            </if>
+            <if test="payCode != null and '' != payCode">
+                #{payCode},
+            </if>
+            <if test="cityNum != null and '' != cityNum">
+                #{cityNum},
+            </if>
+            <if test="cityNumName != null and '' != cityNumName">
+                #{cityNumName},
+            </if>
+            <if test="platform != null">
+                #{platform}
+            </if>
+        </trim>
+    </insert>
+    
+    <!-- 修改方法 -->
+    <update id="update">
+        UPDATE <include refid="tableName"/> 
+        <set> 
+            `TMType` = #{tmtype},
+            `OrderNumber` = #{orderNumber},
+            `OrderTime` = #{orderTime},
+            `UnOrderTime` = #{unOrderTime},
+            `PayType` = #{payType},
+            `Status` = #{status},
+            `UserID` = #{userId},
+            `PayStatus` = #{payStatus},
+            `PayDesc` = #{payDesc},
+            `RequestIP` = #{requestIp},
+            `ISPaymentHod` = #{ispaymentHod},
+            `ProductID` = #{productId},
+            `ProductCode` = #{productCode},
+            `ProductName` = #{productName},
+            `ServiceID` = #{serviceId},
+            `ServiceCode` = #{serviceCode},
+            `ServiceName` = #{serviceName},
+            `ContentID` = #{contentId},
+            `ContentCode` = #{contentCode},
+            `ContentName` = #{contentName},
+            `Price` = #{price},
+            `Discount` = #{discount},
+            `Fee` = #{fee},
+            `ValidStart` = #{validStart},
+            `ValidEnd` = #{validEnd},
+             `CreateTime` = #{createTime},
+            `UpdateTime` = #{updateTime},
+            `ChargingID` = #{chargingId},
+            `SPID` = #{spid},
+            `ServiceType` = #{serviceType},
+            `IsLog` = #{isLog},
+            `UserName` = #{userName},
+            `SPName` = #{spname},
+            `SPResellerID` = #{spresellerId},
+            `SPResellerName` = #{spresellerName},
+            `IsPlan` = #{isPlan},
+            `ChargingDuration` = #{chargingDuration},
+            `IsForceActivation` = #{isForceActivation},
+            `Month` = #{month},
+            `ServiceCancelTime` = #{serviceCancelTime},
+            `FreeMonth` = #{freeMonth},
+            `Remark` = #{remark},
+            `ReportTime` = #{reportTime},
+            `ContentProvider` = #{contentProvider},
+            `OrderId` = #{orderId},
+            `BillingCode` = #{billingCode},
+            `ChargingType` = #{chargingType},
+            `PayCode` = #{payCode},
+            `cityNum` = #{cityNum},
+            `cityNumName` = #{cityNumName},
+            `platform` = #{platform}
+        </set>
+        WHERE `platform` = #{platform} and `OrderNumber` = #{orderNumber}
+    </update>
+	
+	<!-- 修改方法 -->
+    <update id="updateDetailed">
+        UPDATE <include refid="tableName"/> 
+        <set> 
+	        <if test="null != tmtype and '' != tmtype">
+            `TMType` = #{tmtype},
+            </if>
+	        <if test="null != orderNumber and '' != orderNumber">
+            `OrderNumber` = #{orderNumber},
+            </if>
+	        <if test="null != orderTime and '' != orderTime">
+            `OrderTime` = #{orderTime},
+            </if>
+	        <if test="null != unOrderTime and '' != unOrderTime">
+            `UnOrderTime` = #{unOrderTime},
+            </if>
+	        <if test="null != payType">
+            `PayType` = #{payType},
+            </if>
+	        <if test="null != status">
+            `Status` = #{status},
+            </if>
+	        <if test="null != userId and '' != userId">
+            `UserID` = #{userId},
+            </if>
+	        <if test="null != payStatus">
+            `PayStatus` = #{payStatus},
+            </if>
+	        <if test="null != payDesc and '' != payDesc">
+            `PayDesc` = #{payDesc},
+            </if>
+	        <if test="null != requestIp and '' != requestIp">
+            `RequestIP` = #{requestIp},
+            </if>
+	        <if test="null != ispaymentHod">
+            `ISPaymentHod` = #{ispaymentHod},
+            </if>
+	        <if test="null != productId">
+            `ProductID` = #{productId},
+            </if>
+	        <if test="null != productCode and '' != productCode">
+            `ProductCode` = #{productCode},
+            </if>
+	        <if test="null != productName and '' != productName">
+            `ProductName` = #{productName},
+            </if>
+	        <if test="null != serviceId">
+            `ServiceID` = #{serviceId},
+            </if>
+	        <if test="null != serviceCode and '' != serviceCode">
+            `ServiceCode` = #{serviceCode},
+            </if>
+	        <if test="null != serviceName and '' != serviceName">
+            `ServiceName` = #{serviceName},
+            </if>
+	        <if test="null != contentId">
+            `ContentID` = #{contentId},
+            </if>
+	        <if test="null != contentCode and '' != contentCode">
+            `ContentCode` = #{contentCode},
+            </if>
+	        <if test="null != contentName and '' != contentName">
+            `ContentName` = #{contentName},
+            </if>
+	        <if test="null != price and '' != price">
+            `Price` = #{price},
+            </if>
+	        <if test="null != discount and '' != discount">
+            `Discount` = #{discount},
+            </if>
+	        <if test="null != fee and '' != fee">
+            `Fee` = #{fee},
+            </if>
+	        <if test="null != validStart and '' != validStart">
+            `ValidStart` = #{validStart},
+            </if>
+	        <if test="null != validEnd and '' != validEnd">
+            `ValidEnd` = #{validEnd},
+            </if>
+	        <if test="null != createTime and '' != createTime">
+            `CreateTime` = #{createTime},
+            </if>
+	        <if test="null != updateTime and '' != updateTime">
+            `UpdateTime` = #{updateTime},
+            </if>
+	        <if test="null != chargingId">
+            `ChargingID` = #{chargingId},
+            </if>
+	        <if test="null != spid">
+            `SPID` = #{spid},
+            </if>
+	        <if test="null != serviceType">
+            `ServiceType` = #{serviceType},
+            </if>
+	        <if test="null != isLog">
+            `IsLog` = #{isLog},
+            </if>
+	        <if test="null != userName and '' != userName">
+            `UserName` = #{userName},
+            </if>
+	        <if test="null != spname and '' != spname">
+            `SPName` = #{spname},
+            </if>
+	        <if test="null != spresellerId">
+            `SPResellerID` = #{spresellerId},
+            </if>
+	        <if test="null != spresellerName and '' != spresellerName">
+            `SPResellerName` = #{spresellerName},
+            </if>
+	        <if test="null != isPlan">
+            `IsPlan` = #{isPlan},
+            </if>
+	        <if test="null != chargingDuration">
+            `ChargingDuration` = #{chargingDuration},
+            </if>
+	        <if test="null != isForceActivation">
+            `IsForceActivation` = #{isForceActivation},
+            </if>
+	        <if test="null != month and '' != month">
+            `Month` = #{month},
+            </if>
+	        <if test="null != serviceCancelTime and '' != serviceCancelTime">
+            `ServiceCancelTime` = #{serviceCancelTime},
+            </if>
+	        <if test="null != freeMonth">
+            `FreeMonth` = #{freeMonth},
+            </if>
+	        <if test="null != remark and '' != remark">
+            `Remark` = #{remark},
+            </if>
+	        <if test="null != reportTime and '' != reportTime">
+            `ReportTime` = #{reportTime},
+            </if>
+	        <if test="null != contentProvider">
+            `ContentProvider` = #{contentProvider},
+            </if>
+	        <if test="null != orderId and '' != orderId">
+            `OrderId` = #{orderId},
+            </if>
+	        <if test="null != billingCode and '' != billingCode">
+            `BillingCode` = #{billingCode},
+            </if>
+	        <if test="null != chargingType">
+            `ChargingType` = #{chargingType},
+            </if>
+	        <if test="null != payCode and '' != payCode">
+            `PayCode` = #{payCode},
+            </if>
+	        <if test="null != cityNum and '' != cityNum">
+            `cityNum` = #{cityNum},
+            </if>
+	        <if test="null != cityNumName and '' != cityNumName">
+            `cityNumName` = #{cityNumName},
+            </if>
+	        <if test="null != platform">
+            `platform` = #{platform}
+            </if>
+        </set>
+        WHERE `platform` = #{platform} and `OrderNumber` = #{orderNumber}
+    </update>
+    
+    <!-- 根据ID查询 -->
+    <select id="selectById" resultMap="OrderResultMap">
+        SELECT <include refid="columns"/>
+        FROM <include refid="tableName"/>
+        WHERE `ID` = #{id}
+    </select>
+    <select id="selectByPlatAndOrderNum" resultMap="OrderResultMap">
+        SELECT * FROM <include refid="tableName"/>  WHERE `platform`=#{platForm} and `orderNumber`=#{orderNumber}
+    </select>
+
+    <!-- 根据id删除 -->
+    <delete id="deleteById">
+        DELETE FROM <include refid="tableName"/>
+        WHERE `ID` = #{id}
+    </delete>
+
+    <!-- 根据id集合删除 -->
+    <delete id="deleteByIds">
+        DELETE FROM <include refid="tableName"/>
+        WHERE `id` IN
+        <foreach collection="ids" item="item" index="index" open="(" close=")" separator=",">
+#{item}        </foreach>
+    </delete>
+    
+</mapper>
+

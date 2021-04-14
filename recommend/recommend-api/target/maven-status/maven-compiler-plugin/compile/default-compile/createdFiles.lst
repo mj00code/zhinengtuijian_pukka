@@ -1,0 +1,9 @@
+com\ubo\iptv\recommend\requset\BaseDTO.class
+com\ubo\iptv\recommend\api\fallback\IPTVApiFallback$1.class
+com\ubo\iptv\recommend\annotation\RecommendStarter.class
+com\ubo\iptv\recommend\enums\MediaChargeFreeEnum.class
+com\ubo\iptv\recommend\annotation\RecommendFeignProxy.class
+com\ubo\iptv\recommend\api\fallback\IPTVApiFallback.class
+com\ubo\iptv\recommend\api\IPTVApi.class
+com\ubo\iptv\recommend\enums\MediaShowEnum.class
+com\ubo\iptv\recommend\response\IPTVMediaVO.class

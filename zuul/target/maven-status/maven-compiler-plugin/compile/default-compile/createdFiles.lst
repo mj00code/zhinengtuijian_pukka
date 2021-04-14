@@ -1,0 +1,5 @@
+com\ubo\iptv\zuul\filters\LoginFilter.class
+com\ubo\iptv\zuul\util\JWTUtil.class
+com\ubo\iptv\zuul\filters\HighestFilter.class
+com\ubo\iptv\zuul\util\RedisUtil.class
+com\ubo\iptv\zuul\ZuulApplication.class

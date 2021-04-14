@@ -1,0 +1,74 @@
+spring:
+  redis:
+    host: ${redis.host}
+    port: ${redis.port}
+    password: ${redis.password}
+    database: 1
+    pool:
+      max-idle: 10
+      max-active: ${redis.pool.max-active}
+      max-wait: 10000
+  http:
+    multipart:
+      #enabled: true   # 启用http上传处理
+      max-file-size: 20MB # 设置单个文件的最大长度
+      max-request-size: 20MB # 设置最大的请求文件的大小
+      #file-size-threshold: 50MB  # 当上传文件达到1MB的时候进行磁盘写入
+      location: "/tmp" # 上传的临时目录
+  jackson.serialization.indent_output: true #格式化json输出，如果有xml格式的输出，需置为false
+
+#配置actuator路径
+management:
+  context-path: /actuator
+#拦截actuator路径，保护敏感信息
+security:
+  basic:
+    path: ${management.context-path}
+  user:
+    name: ${security.username}
+    password: ${security.password}
+
+#开启健康检查
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+
+#开启熔断机制
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 30000
+
+ribbon:
+  ConnectTimeout: 30000
+  ReadTimeout: 60000
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+  MaxTotalConnections: ${zuul.host.maxTotalConnections}
+  MaxConnectionsPerHost: ${zuul.host.maxPerRouteConnections}
+
+zuul:
+  sensitive-headers:  #不过滤cookie
+  prefix: /api   #为zuul设置公共前缀
+  host:
+    maxTotalConnections: ${zuul.host.maxTotalConnections}
+    maxPerRouteConnections: ${zuul.host.maxPerRouteConnections}
+  semaphore:
+    max-semaphores: ${zuul.semaphore.max-semaphores}
+
+tomcat.max-connections: ${zuul.host.maxTotalConnections}
+
+#uri
+uri.white: ${uri.white}
+uri.black: ${uri.black}
+
+#jwt
+jwt.secret-key: ${jwt.secret-key}
