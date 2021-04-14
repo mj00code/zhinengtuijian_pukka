@@ -1,9 +1,0 @@
-com\ubo\iptv\logstash\LogstashProducerApplication.class
-com\ubo\iptv\logstash\service\impl\NatsMessageServiceImpl.class
-com\ubo\iptv\logstash\controller\IndxController.class
-com\ubo\iptv\logstash\service\MessageService.class
-com\ubo\iptv\logstash\config\NatsConfig.class
-com\ubo\iptv\logstash\service\impl\MessageServiceImpl.class
-com\ubo\iptv\logstash\config\ThreadPoolConfig.class
-com\ubo\iptv\logstash\config\MainConstants.class
-com\ubo\iptv\logstash\task\LogPushTask.class

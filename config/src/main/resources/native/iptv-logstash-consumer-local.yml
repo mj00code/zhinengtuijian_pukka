@@ -1,8 +1,0 @@
-#datasource
-datasource.name: gz_recommend
-
-#redis
-redis.pool.max-active: 500
-
-#nats
-nats.threadcount: 10
