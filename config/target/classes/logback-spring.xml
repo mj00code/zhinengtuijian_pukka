@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 本项目的起始类包名,每个新项目需要在此指定包名-->
+    <property name="appBasePackage" value="com.ubo"/>
+
+    <springProperty name="appName" source="spring.application.name"/>
+    <springProperty name="envName" source="spring.profiles.active"/>
+
+    <!-- 文件输出格式 -->
+    <property name="PATTERN" value="%-12(%d{yyyy-MM-dd HH:mm:ss.SSS}) |-%-5level [%thread] %c [%L] -| %msg%n"/>
+
+    <!-- linux日志文件文件路径 -->
+    <property name="FILE_PATH" value="/log/${appName}/"/>
+
+    <!-- native环境 -->
+    <springProfile name="native">
+        <appender name="PRD_FILE_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+            <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+                <fileNamePattern>${FILE_PATH}/${appName}.%d{yyyy-MM-dd}.log</fileNamePattern>
+                <MaxHistory>30</MaxHistory>
+            </rollingPolicy>
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <pattern>${PATTERN}</pattern>
+            </layout>
+            <encoder>
+                <charset>UTF-8</charset>
+                <pattern>${PATTERN}</pattern>
+            </encoder>
+        </appender>
+        <logger name="${appBasePackage}" level="info"/>
+        <root level="warn">
+            <appender-ref ref="PRD_FILE_APPENDER"/>
+        </root>
+    </springProfile>
+</configuration>

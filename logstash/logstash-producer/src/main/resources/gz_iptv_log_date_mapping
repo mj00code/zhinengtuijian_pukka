@@ -1,0 +1,158 @@
+创建模板
+
+DELETE gz_iptv_log_*
+
+PUT  _template/gz_iptv_log_template
+{
+"index_patterns":[
+  "gz_iptv_log*"
+  ],
+"order" : 1,
+"settings": {
+  "number_of_shards": 1,
+  "number_of_replicas":0,
+  "refresh_interval": "10s"
+},
+    "mappings": {
+      "doc": {
+        "properties": {
+          "RECOMMEND_LOCATION_CLICK": {
+            "type": "long"
+          },
+          "VOD_PLAY_BEHAVIOR": {
+            "type": "long"
+          },
+          "actors": {
+            "type": "keyword"
+          },
+          "area_num": {
+            "type": "keyword"
+          },
+          "content_type": {
+            "type": "keyword"
+          },
+          "create_day": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "create_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss         || yyyy-MM-dd ||epoch_millis"
+           },
+          "device_ph": {
+            "type": "long"
+          },
+          "device_pw": {
+            "type": "long"
+          },
+          "director": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+            "event_type": {
+            "type": "keyword"
+          },
+          "id": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "log_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss || yyyy-MM-dd ||epoch_millis"
+          },
+          "media_code": {
+            "type": "keyword"
+          },
+          "media_name": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "media_type": {
+	          "type": "long"
+          },
+          "category_code": {
+          	  "type": "keyword"
+          },
+          "media_type_id": {
+            "type": "keyword"
+          },
+          "media_type_name": {
+            "type": "keyword"
+          },
+         "nettype": {
+	          "type": "keyword"
+         },
+          "ostype ": {
+           	"type": "keyword"
+         },
+          "osversion ": {
+            "type": "keyword"
+         },
+          "part_of_day": {
+            "type": "long"
+          },
+          "sdk_version": {
+           "type": "keyword"
+         },
+          "seqid": {
+            "type": "long"
+          },
+          "series_flag": {
+            "type": "integer"
+          },
+          "source_channel": {
+            "type": "keyword"
+         },
+          "start_time": {
+        	  "type": "date",
+	          "format": "date_time||yyyy-MM-dd HH:mm:ss         || yyyy-MM-dd ||epoch_millis"
+          },
+          "sys_id": {
+	          "type": "keyword"
+          },
+          "tryview": {
+            "type": "text",
+            "fields": {
+              "keyword": {
+                "type": "keyword",
+                "ignore_above": 256
+              }
+            }
+          },
+          "update_time": {
+            "type": "date",
+            "format": "date_time||yyyy-MM-dd HH:mm:ss         || yyyy-MM-dd ||epoch_millis"
+          },
+          "user_db_id": {
+            "type": "long"
+          },
+          "user_id": {
+           	"type": "keyword"
+          },
+          "user_type ": {
+            "type": "keyword"
+          }
+        }
+    }
+  }
+}

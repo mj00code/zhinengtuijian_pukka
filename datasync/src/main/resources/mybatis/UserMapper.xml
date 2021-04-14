@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"
+"http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+
+<!-- 不使用namespace的话sql搜索定位会比较方便 -->
+<mapper namespace="cn.pukkasoft.datasync.dao.UserDao">
+
+	<resultMap id="UserResultMap" type="cn.pukkasoft.datasync.model.User">
+		<result property="id" column="ID"/>
+		<result property="serverId" column="ServerID"/>
+		<result property="phone" column="Phone"/>
+		<result property="timestamp" column="Timestamp"/>
+		<result property="status" column="Status"/>
+		<result property="cityNum" column="CityNum"/>
+		<result property="areaNum" column="AreaNum"/>
+		<result property="channelNum" column="ChannelNum"/>
+		<result property="juXiangNum" column="JuXiangNum"/>
+		<result property="peopleNum" column="PeopleNum"/>
+		<result property="spnum" column="SPNum"/>
+		<result property="opnum" column="OPNum"/>
+		<result property="deviceNum" column="DeviceNum"/>
+		<result property="correlateId" column="CorrelateID"/>
+		<result property="ottuserId" column="OTTUserID"/>
+		<result property="iptvuserId" column="IPTVUserID"/>
+		<result property="password" column="Password"/>
+		<result property="sn" column="SN"/>
+		<result property="createtime" column="createtime"/>
+		<result property="updatetime" column="updatetime"/>
+		<result property="token" column="token"/>
+		<result property="userGroupId" column="UserGroupId"/>
+		<result property="userGroupName" column="UserGroupName"/>
+		<result property="platform" column="platform"/>
+		<result property="activetime" column="activetime"/>
+		<result property="cityNumName" column="cityNumName"/>
+	</resultMap>
+	
+	<!-- 表名 -->
+	<sql id="tableName">
+        t_gsyd_user
+    </sql>
+    
+    <sql id="columns">
+        `ID`,`ServerID`,`Phone`,`Timestamp`,`Status`,`CityNum`,`AreaNum`,`ChannelNum`,`JuXiangNum`,`PeopleNum`,`SPNum`,`OPNum`,`DeviceNum`,`CorrelateID`,`OTTUserID`,`IPTVUserID`,`Password`,`SN`,`createtime`,`updatetime`,`token`,`UserGroupId`,`UserGroupName`,`platform`,`activetime`,`cityNumName`
+    </sql>
+    
+    <sql id="where">
+        <where>
+	        <if test="null != id">
+            AND `ID` = #{id}
+            </if>
+	        <if test="null != serverId and '' != serverId">
+            AND `ServerID` = #{serverId}
+            </if>
+	        <if test="null != phone and '' != phone">
+            AND `Phone` = #{phone}
+            </if>
+	        <if test="null != timestamp and '' != timestamp">
+            AND `Timestamp` = #{timestamp}
+            </if>
+	        <if test="null != status">
+            AND `Status` = #{status}
+            </if>
+	        <if test="null != cityNum and '' != cityNum">
+            AND `CityNum` = #{cityNum}
+            </if>
+	        <if test="null != areaNum">
+            AND `AreaNum` = #{areaNum}
+            </if>
+	        <if test="null != channelNum and '' != channelNum">
+            AND `ChannelNum` = #{channelNum}
+            </if>
+	        <if test="null != juXiangNum and '' != juXiangNum">
+            AND `JuXiangNum` = #{juXiangNum}
+            </if>
+	        <if test="null != peopleNum and '' != peopleNum">
+            AND `PeopleNum` = #{peopleNum}
+            </if>
+	        <if test="null != spnum and '' != spnum">
+            AND `SPNum` = #{spnum}
+            </if>
+	        <if test="null != opnum and '' != opnum">
+            AND `OPNum` = #{opnum}
+            </if>
+	        <if test="null != deviceNum and '' != deviceNum">
+            AND `DeviceNum` = #{deviceNum}
+            </if>
+	        <if test="null != correlateId and '' != correlateId">
+            AND `CorrelateID` = #{correlateId}
+            </if>
+	        <if test="null != ottuserId and '' != ottuserId">
+            AND `OTTUserID` = #{ottuserId}
+            </if>
+	        <if test="null != iptvuserId and '' != iptvuserId">
+            AND `IPTVUserID` = #{iptvuserId}
+            </if>
+	        <if test="null != password and '' != password">
+            AND `Password` = #{password}
+            </if>
+	        <if test="null != sn and '' != sn">
+            AND `SN` = #{sn}
+            </if>
+	        <if test="null != createtime and '' != createtime">
+            AND `createtime` = #{createtime}
+            </if>
+	        <if test="null != updatetime and '' != updatetime">
+            AND `updatetime` = #{updatetime}
+            </if>
+	        <if test="null != token and '' != token">
+            AND `token` = #{token}
+            </if>
+	        <if test="null != userGroupId">
+            AND `UserGroupId` = #{userGroupId}
+            </if>
+	        <if test="null != userGroupName and '' != userGroupName">
+            AND `UserGroupName` = #{userGroupName}
+            </if>
+	        <if test="null != platform">
+            AND `platform` = #{platform}
+            </if>
+	        <if test="null != activetime and '' != activetime">
+            AND `activetime` = #{activetime}
+            </if>
+	        <if test="null != cityNumName and '' != cityNumName">
+            AND `cityNumName` = #{cityNumName}
+            </if>
+        </where>
+    </sql>
+	
+	<!-- 添加方法 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO <include refid="tableName"/>
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+                <if test="id != null">
+                    `ID`,
+                </if>
+                <if test="serverId != null and '' != serverId">
+                    `ServerID`,
+                </if>
+                <if test="phone != null and '' != phone">
+                    `Phone`,
+                </if>
+                <if test="timestamp != null and '' != timestamp">
+                    `Timestamp`,
+                </if>
+                <if test="status != null">
+                    `Status`,
+                </if>
+                <if test="cityNum != null and '' != cityNum">
+                    `CityNum`,
+                </if>
+                <if test="areaNum != null">
+                    `AreaNum`,
+                </if>
+                <if test="channelNum != null and '' != channelNum">
+                    `ChannelNum`,
+                </if>
+                <if test="juXiangNum != null and '' != juXiangNum">
+                    `JuXiangNum`,
+                </if>
+                <if test="peopleNum != null and '' != peopleNum">
+                    `PeopleNum`,
+                </if>
+                <if test="spnum != null and '' != spnum">
+                    `SPNum`,
+                </if>
+                <if test="opnum != null and '' != opnum">
+                    `OPNum`,
+                </if>
+                <if test="deviceNum != null and '' != deviceNum">
+                    `DeviceNum`,
+                </if>
+                <if test="correlateId != null and '' != correlateId">
+                    `CorrelateID`,
+                </if>
+                <if test="ottuserId != null and '' != ottuserId">
+                    `OTTUserID`,
+                </if>
+                <if test="iptvuserId != null and '' != iptvuserId">
+                    `IPTVUserID`,
+                </if>
+                <if test="password != null and '' != password">
+                    `Password`,
+                </if>
+                <if test="sn != null and '' != sn">
+                    `SN`,
+                </if>
+                <if test="createtime != null and '' != createtime">
+                    `createtime`,
+                </if>
+                <if test="updatetime != null and '' != updatetime">
+                    `updatetime`,
+                </if>
+                <if test="token != null and '' != token">
+                    `token`,
+                </if>
+                <if test="userGroupId != null">
+                    `UserGroupId`,
+                </if>
+                <if test="userGroupName != null and '' != userGroupName">
+                    `UserGroupName`,
+                </if>
+                <if test="platform != null">
+                    `platform`,
+                </if>
+                <if test="activetime != null and '' != activetime">
+                    `activetime`,
+                </if>
+                <if test="cityNumName != null and '' != cityNumName">
+                    `cityNumName`
+                </if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="serverId != null and '' != serverId">
+                #{serverId},
+            </if>
+            <if test="phone != null and '' != phone">
+                #{phone},
+            </if>
+            <if test="timestamp != null and '' != timestamp">
+                #{timestamp},
+            </if>
+            <if test="status != null">
+                #{status},
+            </if>
+            <if test="cityNum != null and '' != cityNum">
+                #{cityNum},
+            </if>
+            <if test="areaNum != null">
+                #{areaNum},
+            </if>
+            <if test="channelNum != null and '' != channelNum">
+                #{channelNum},
+            </if>
+            <if test="juXiangNum != null and '' != juXiangNum">
+                #{juXiangNum},
+            </if>
+            <if test="peopleNum != null and '' != peopleNum">
+                #{peopleNum},
+            </if>
+            <if test="spnum != null and '' != spnum">
+                #{spnum},
+            </if>
+            <if test="opnum != null and '' != opnum">
+                #{opnum},
+            </if>
+            <if test="deviceNum != null and '' != deviceNum">
+                #{deviceNum},
+            </if>
+            <if test="correlateId != null and '' != correlateId">
+                #{correlateId},
+            </if>
+            <if test="ottuserId != null and '' != ottuserId">
+                #{ottuserId},
+            </if>
+            <if test="iptvuserId != null and '' != iptvuserId">
+                #{iptvuserId},
+            </if>
+            <if test="password != null and '' != password">
+                #{password},
+            </if>
+            <if test="sn != null and '' != sn">
+                #{sn},
+            </if>
+            <if test="createtime != null and '' != createtime">
+                #{createtime},
+            </if>
+            <if test="updatetime != null and '' != updatetime">
+                #{updatetime},
+            </if>
+            <if test="token != null and '' != token">
+                #{token},
+            </if>
+            <if test="userGroupId != null">
+                #{userGroupId},
+            </if>
+            <if test="userGroupName != null and '' != userGroupName">
+                #{userGroupName},
+            </if>
+            <if test="platform != null">
+                #{platform},
+            </if>
+            <if test="activetime != null and '' != activetime">
+                #{activetime},
+            </if>
+            <if test="cityNumName != null and '' != cityNumName">
+                #{cityNumName}
+            </if>
+        </trim>
+    </insert>
+    
+    <!-- 修改方法 -->
+    <update id="update">
+        UPDATE <include refid="tableName"/> 
+        <set> 
+            `ServerID` = #{serverId},
+            `Phone` = #{phone},
+            `Timestamp` = #{timestamp},
+            `Status` = #{status},
+            `CityNum` = #{cityNum},
+            `AreaNum` = #{areaNum},
+            `ChannelNum` = #{channelNum},
+            `JuXiangNum` = #{juXiangNum},
+            `PeopleNum` = #{peopleNum},
+            `SPNum` = #{spnum},
+            `OPNum` = #{opnum},
+            `DeviceNum` = #{deviceNum},
+            `CorrelateID` = #{correlateId},
+            `OTTUserID` = #{ottuserId},
+            `IPTVUserID` = #{iptvuserId},
+            `Password` = #{password},
+            `SN` = #{sn},
+             `createtime` = #{createtime},
+            `updatetime` = #{updatetime},
+            `token` = #{token},
+            `UserGroupId` = #{userGroupId},
+            `UserGroupName` = #{userGroupName},
+            `platform` = #{platform},
+            `activetime` = #{activetime},
+            `cityNumName` = #{cityNumName}
+        </set>
+        WHERE `platform` = #{platform} and `IPTVUserID` = #{iptvuserId}
+    </update>
+	
+	<!-- 修改方法 -->
+    <update id="updateDetailed">
+        UPDATE <include refid="tableName"/> 
+        <set> 
+	        <if test="null != serverId and '' != serverId">
+            `ServerID` = #{serverId},
+            </if>
+	        <if test="null != phone and '' != phone">
+            `Phone` = #{phone},
+            </if>
+	        <if test="null != timestamp and '' != timestamp">
+            `Timestamp` = #{timestamp},
+            </if>
+	        <if test="null != status">
+            `Status` = #{status},
+            </if>
+	        <if test="null != cityNum and '' != cityNum">
+            `CityNum` = #{cityNum},
+            </if>
+	        <if test="null != areaNum">
+            `AreaNum` = #{areaNum},
+            </if>
+	        <if test="null != channelNum and '' != channelNum">
+            `ChannelNum` = #{channelNum},
+            </if>
+	        <if test="null != juXiangNum and '' != juXiangNum">
+            `JuXiangNum` = #{juXiangNum},
+            </if>
+	        <if test="null != peopleNum and '' != peopleNum">
+            `PeopleNum` = #{peopleNum},
+            </if>
+	        <if test="null != spnum and '' != spnum">
+            `SPNum` = #{spnum},
+            </if>
+	        <if test="null != opnum and '' != opnum">
+            `OPNum` = #{opnum},
+            </if>
+	        <if test="null != deviceNum and '' != deviceNum">
+            `DeviceNum` = #{deviceNum},
+            </if>
+	        <if test="null != correlateId and '' != correlateId">
+            `CorrelateID` = #{correlateId},
+            </if>
+	        <if test="null != ottuserId and '' != ottuserId">
+            `OTTUserID` = #{ottuserId},
+            </if>
+	        <if test="null != iptvuserId and '' != iptvuserId">
+            `IPTVUserID` = #{iptvuserId},
+            </if>
+	        <if test="null != password and '' != password">
+            `Password` = #{password},
+            </if>
+	        <if test="null != sn and '' != sn">
+            `SN` = #{sn},
+            </if>
+	        <if test="null != createtime and '' != createtime">
+            `createtime` = #{createtime},
+            </if>
+	        <if test="null != updatetime and '' != updatetime">
+            `updatetime` = #{updatetime},
+            </if>
+	        <if test="null != token and '' != token">
+            `token` = #{token},
+            </if>
+	        <if test="null != userGroupId">
+            `UserGroupId` = #{userGroupId},
+            </if>
+	        <if test="null != userGroupName and '' != userGroupName">
+            `UserGroupName` = #{userGroupName},
+            </if>
+	        <if test="null != platform">
+            `platform` = #{platform},
+            </if>
+	        <if test="null != activetime and '' != activetime">
+            `activetime` = #{activetime},
+            </if>
+	        <if test="null != cityNumName and '' != cityNumName">
+            `cityNumName` = #{cityNumName}
+            </if>
+        </set>
+        WHERE `platform` = #{platform} and `IPTVUserID` = #{iptvuserId}
+    </update>
+    
+    <!-- 根据ID查询 -->
+    <select id="selectById" resultMap="UserResultMap">
+        SELECT <include refid="columns"/>
+        FROM <include refid="tableName"/>
+        WHERE `ID` = #{id}
+    </select>
+    <select id="selectByByPlatOpreatorAndUserId" resultMap="UserResultMap">
+      SELECT <include refid="columns"/> FROM <include refid="tableName"/> WHERE `platform`=#{platformOperator} AND `iptvuserId`=#{userId}
+    </select>
+
+
+    
+</mapper>
+
